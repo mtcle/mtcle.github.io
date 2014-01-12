@@ -1,5 +1,5 @@
 ---
-title: Luke's Homepage
+title: Mtcle zoon
 layout: page
 ---
 
@@ -21,9 +21,9 @@ layout: page
 
   {% if paginator.previous_page %}
     {% if paginator.previous_page == 1 %}
-    <a href="/"><前页</a>
+    <a href="/blog/"><前页</a>
     {% else %}
-    <a href="/page{{paginator.previous_page}}"><前页</a>
+    <a href="/blog/page{{paginator.previous_page}}"><前页</a>
     {% endif %}
   {% else %}
     <span class="previous disabled"><前页</span>
@@ -32,7 +32,7 @@ layout: page
       {% if paginator.page == 1 %}
       <span class="current-page">1</span>
       {% else %}
-      <a href="/">1</a>
+      <a href="/blog/">1</a>
       {% endif %}
 
     {% for count in (2..paginator.total_pages) %}
