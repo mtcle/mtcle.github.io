@@ -1,0 +1,6 @@
+markdown: rdiscount
+permalink: /:year/:month/:title/
+url: http://mtcle.github.io
+author: mtcle
+pygments: true
+paginate: 24
