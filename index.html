@@ -30,14 +30,14 @@ layout: page
   {% endif %}
 
       {% if paginator.page == 1 %}
-      <span class="current-page">1</span>
+      <span class="/blog/current-page">1</span>
       {% else %}
       <a href="/blog/">1</a>
       {% endif %}
 
     {% for count in (2..paginator.total_pages) %}
       {% if count == paginator.page %}
-      <span class="blog/current-page">{{count}}</span>
+      <span class="/blog/current-page">{{count}}</span>
       {% else %}
       <a href="/blog/page{{count}}">{{count}}</a>
       {% endif %}
