@@ -32,7 +32,7 @@ layout: page
       {% if paginator.page == 1 %}
       <span class="/blog/current-page">1</span>
       {% else %}
-      <a href="page{{count}}">1</a>
+      <a href="/blog/page{{count}}">1</a>
       {% endif %}
 
     {% for count in (2..paginator.total_pages) %}
