@@ -19,7 +19,7 @@
       <div id="main" role="main">
         <header>
         <div class="buttons">
-          <a href="/blog/" class="ss-icon" title="Go to homepage">老窝</a>
+          <a href="/blog" class="ss-icon" title="Go to homepage">老窝</a>
           <a href="/blog/categories" class="ss-icon" title="Category" >list</a>
           <a href="/blog/tags" class="ss-icon" title="Tag Cloud" >tags</a>
           <a href="/blog/guestbook" class="ss-icon" title="Guest Book" >talk</a>
