@@ -20,11 +20,11 @@
         <header>
         <div class="buttons">
           <a href="/blog/" class="ss-icon" title="Go to homepage">老窝</a>
-          <a href="/blog/categories/" class="ss-icon" title="Category" >list</a>
-          <a href="/blog/tags/" class="ss-icon" title="Tag Cloud" >tags</a>
-          <a href="/blog/guestbook/" class="ss-icon" title="Guest Book" >talk</a>
-          <a href="/blog/about/" class="ss-icon" title="About" >it's me</a>
-          <a href="/blog/feed/" class="ss-icon" title="Subscribe by RSS" >rss</a>
+          <a href="/blog/categories" class="ss-icon" title="Category" >list</a>
+          <a href="/blog/tags" class="ss-icon" title="Tag Cloud" >tags</a>
+          <a href="/blog/guestbook" class="ss-icon" title="Guest Book" >talk</a>
+          <a href="/blog/about" class="ss-icon" title="About" >it's me</a>
+          <a href="/blog/feed" class="ss-icon" title="Subscribe by RSS" >rss</a>
         </div>
         <h1>{{ page.title }}</h1>
         </header>
