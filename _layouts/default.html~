@@ -29,8 +29,8 @@
         <h1>{{ page.title }}</h1>
         </header>
         <hr>
-        <article class="content">
-        {{ content }}
+        <article class="/blog/content">
+        {{ /blog/content }}
         </article>
       </div>
 
