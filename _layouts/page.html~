@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<section class="post">
+<section class="/blog/post">
 {{ content }}
 </section>
 {% if page.comments %}
