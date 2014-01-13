@@ -7,7 +7,7 @@
     <title>mtcle</title>
     <link href="http://mtcle.github.io/blog//feed/" rel="self" />
     <link href="http://mtcle.github.io/blog/" />
-    <lastBuildDate>2014-01-13T15:40:21+08:00</lastBuildDate>
+    <lastBuildDate>2014-01-13T16:18:20+08:00</lastBuildDate>
     <webMaster>mtcle@126.com</webMaster>
     
     <item>
@@ -62,7 +62,10 @@
       <guid>http://mtcle.github.io/blog//2014/01/codehighlighttest</guid>
       <content:encoded><![CDATA[<hr />
 
-<pre><code class="java">package model;
+<p>```java</p>
+
+<pre><code> 
+package model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -84,7 +87,7 @@ public class Book {
   private int bookRentLevel = 0;// 图书租金级别,默认为0,高级为1
   private Sequence sequence;// 定义一个图书序列号
   private String Id;
-  private ArrayList&lt;Record&gt; record = new ArrayList&lt;Record&gt;(); // 规定泛型类型
+  private ArrayList<Record> record = new ArrayList<Record>(); // 规定泛型类型
 
   public Book(String name, String head) throws ClassNotFoundException {// 只有名字的构造器
     this.bookName = name;
@@ -145,11 +148,11 @@ public class Book {
   }
 
 
-  public ArrayList&lt;Record&gt; getRecord() {
+  public ArrayList<Record> getRecord() {
     return record;
   }
 
-  public void setRecord(ArrayList&lt;Record&gt; record) {
+  public void setRecord(ArrayList<Record> record) {
     this.record = record;
   }
 
@@ -165,7 +168,7 @@ public class Book {
     private double totalfajin = 0;
     Date date = new Date();
     SimpleDateFormat timeformat = new SimpleDateFormat("yyyy-MM-dd");// 格式化时间输出
-
+    
     public Record() {
       try {
         Connection connection =
@@ -231,17 +234,20 @@ public class Book {
     }
 
     public double fajin(long checkInTime, double fajinfee) {
-
-      if (((checkInTime - checkOutTime) / (24 * 60 * 60 * 1000)) &gt; 30) {
+      
+      if (((checkInTime - checkOutTime) / (24 * 60 * 60 * 1000)) > 30) {
         totalfajin = ((checkInTime - checkOutTime) / (24 * 60 * 60 * 1000) - 30) * 2;// 默认罚金为2元一天，后期可以设置
         return totalfajin;
       }
       return totalfajin;
     }
-
+   
   }
 }
 </code></pre>
+
+
+<p>```</p>
 ]]></content:encoded>
     </item>
     
