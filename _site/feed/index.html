@@ -7,7 +7,7 @@
     <title>mtcle</title>
     <link href="http://mtcle.github.io/blog//feed/" rel="self" />
     <link href="http://mtcle.github.io/blog/" />
-    <lastBuildDate>2014-01-13T14:13:06+08:00</lastBuildDate>
+    <lastBuildDate>2014-01-13T15:06:25+08:00</lastBuildDate>
     <webMaster>mtcle@126.com</webMaster>
     
     <item>
@@ -16,16 +16,15 @@
       <pubDate>2014-01-13T00:00:00+08:00</pubDate>
       <author>mtcle</author>
       <guid>http://mtcle.github.io/blog//2014/01/mysql</guid>
-      <content:encoded><![CDATA[<p>以前接触过sqlsever，对于一些简单的查询及联合查询基本了解，这里记录下最近使用jdbc连接mysql的一些注意事项
+      <content:encoded><![CDATA[<blockquote><p>以前接触过sqlsever，对于一些简单的查询及联合查询基本了解，这里记录下最近使用jdbc连接mysql的一些注意事项
 也能让我以后再次使用mysql时可以回过头来查阅。
-1.加载驱动：Class.forName("com.mysql.jdbc.Driver");
-2.建立连接：Connection connection =DriverManager.getConnection("jdbc:mysql://localhost/book_mgr?characterEncoding=utf8",
-                  "root", "password");//这个要在数据库后面写上查询字符集，否在查询不到数据库的中文结果。
-3.调用Statement： Statement statement = connection.createStatement()。
-4.取结果集：ResultSet getresault=statement.executeQuery("查询语句")。
-5.对结果集进行处理：使用 while (getResault.next()) {passtemp = getresault.getString(1);}//数字对应着结果的列编号
-6.连接关闭：connection.close();
-7.若进行多条语句操作则必须添加事务处理。要在命令开始前设置成commit为false，对执行多条语句后进行commit,若异常后进行rollback，在fanlly里进行连接终端操作。</p>
+1.加载驱动：<code>Class.forName("com.mysql.jdbc.Driver");</code>
+2.建立连接：<code>Connection connection =DriverManager.getConnection("jdbc:mysql://localhost/book_mgr?characterEncoding=utf8","root", "password");//这个要在数据库后面写上查询字符集，否在查询不到数据库的中文结果。</code>
+3.调用Statement： <code>Statement statement = connection.createStatement()</code>。
+4.取结果集：<code>ResultSet getresault=statement.executeQuery("查询语句")</code>。
+5.对结果集进行处理：使用 <code>while (getResault.next()) {passtemp = getresault.getString(1);}//数字对应着结果的列编号</code>
+6.连接关闭：<code>connection.close();</code>
+7.若进行多条语句操作则必须添加事务处理。要在命令开始前设置成commit为false，对执行多条语句后进行commit,若异常后进行rollback，在finally里进行连接终端操作。</p></blockquote>
 
 <p>the end</p>
 ]]></content:encoded>
