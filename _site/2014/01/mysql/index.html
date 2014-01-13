@@ -41,19 +41,19 @@
 
 <h4>1.加载驱动：  <code>Class.forName("com.mysql.jdbc.Driver");</code></h4>
 
-<h4>2.建立连接：`Connection connection =DriverManager.getConnection</h4>
+<h4>2.建立连接：  `Connection connection =DriverManager.getConnection</h4>
 
 <h4>("jdbc:mysql://localhost/book_mgr?characterEncoding=utf8","root", "password");//这个要在数据库后面</h4>
 
 <h4>写上查询字符集，否在查询不到数据库的中文结果。`</h4>
 
-<h4>3.调用Statement： <code>Statement statement = connection.createStatement()</code>。</h4>
+<h4>3.调用Statement：  <code>Statement statement = connection.createStatement()</code>。</h4>
 
-<h4>4.取结果集：<code>ResultSet getresault=statement.executeQuery("查询语句")</code>。</h4>
+<h4>4.取结果集：  <code>ResultSet getresault=statement.executeQuery("查询语句")</code>。</h4>
 
 <h4>5.对结果集进行处理：使用 <code>while (getResault.next()) {passtemp = getresault.getString(1);}//数字对应着结果的列编号</code></h4>
 
-<h4>6.连接关闭：<code>connection.close();</code></h4>
+<h4>6.连接关闭：  <code>connection.close();</code></h4>
 
 <h4>7.若进行多条语句操作则必须添加事务处理。要在命令开始前设置成commit为false，对执行多条语句后进行commit,若异常后进行rollback，在finally里进行连接终端操作。</h4>
 

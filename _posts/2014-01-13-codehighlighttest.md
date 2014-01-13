@@ -1,68 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-  <rss version="2.0"
-        xmlns:content="http://purl.org/rss/1.0/modules/content/"
-        xmlns:atom="http://www.w3.org/2005/Atom"
-  >
-  <channel>
-    <title>mtcle</title>
-    <link href="http://mtcle.github.io/blog//feed/" rel="self" />
-    <link href="http://mtcle.github.io/blog/" />
-    <lastBuildDate>2014-01-13T15:40:21+08:00</lastBuildDate>
-    <webMaster>mtcle@126.com</webMaster>
-    
-    <item>
-      <title>Mysql笔记</title>
-      <link href="http://mtcle.github.io/blog//2014/01/mysql/"/>
-      <pubDate>2014-01-13T00:00:00+08:00</pubDate>
-      <author>mtcle</author>
-      <guid>http://mtcle.github.io/blog//2014/01/mysql</guid>
-      <content:encoded><![CDATA[<hr />
-
-<h3>以前学习过sqlsever，对于一些基本查询及联合查询基本了解，这里记录下</h3>
-
-<h3>最近使用jdbc连接mysql的一些注意事项也能让我以后再次使用mysql时可以回过头来查阅。</h3>
-
-<hr />
-
-<h4>1.加载驱动：  <code>Class.forName("com.mysql.jdbc.Driver");</code></h4>
-
-<h4>2.建立连接：  `Connection connection =DriverManager.getConnection</h4>
-
-<h4>("jdbc:mysql://localhost/book_mgr?characterEncoding=utf8","root", "password");//这个要在数据库后面</h4>
-
-<h4>写上查询字符集，否在查询不到数据库的中文结果。`</h4>
-
-<h4>3.调用Statement：  <code>Statement statement = connection.createStatement()</code>。</h4>
-
-<h4>4.取结果集：  <code>ResultSet getresault=statement.executeQuery("查询语句")</code>。</h4>
-
-<h4>5.对结果集进行处理：使用 <code>while (getResault.next()) {passtemp = getresault.getString(1);}//数字对应着结果的列编号</code></h4>
-
-<h4>6.连接关闭：  <code>connection.close();</code></h4>
-
-<h4>7.若进行多条语句操作则必须添加事务处理。要在命令开始前设置成commit为false，对执行多条语句后进行commit,若异常后进行rollback，在finally里进行连接终端操作。</h4>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>第一次</title>
-      <link href="http://mtcle.github.io/blog//2014/01/frist/"/>
-      <pubDate>2014-01-13T00:00:00+08:00</pubDate>
-      <author>mtcle</author>
-      <guid>http://mtcle.github.io/blog//2014/01/frist</guid>
-      <content:encoded><![CDATA[<p>一切看似简单的东西总能领悟到许多的东西。</p>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>测试代码高亮</title>
-      <link href="http://mtcle.github.io/blog//2014/01/codehighlighttest/"/>
-      <pubDate>2014-01-13T00:00:00+08:00</pubDate>
-      <author>mtcle</author>
-      <guid>http://mtcle.github.io/blog//2014/01/codehighlighttest</guid>
-      <content:encoded><![CDATA[<hr />
-
-<pre><code class="java">package model;
+---
+layout: post
+title: "测试代码高亮"
+description: "测试"
+category: [杂乱]
+tags: [杂乱]
+---
+---
+```java
+package model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -84,7 +29,7 @@ public class Book {
   private int bookRentLevel = 0;// 图书租金级别,默认为0,高级为1
   private Sequence sequence;// 定义一个图书序列号
   private String Id;
-  private ArrayList&lt;Record&gt; record = new ArrayList&lt;Record&gt;(); // 规定泛型类型
+  private ArrayList<Record> record = new ArrayList<Record>(); // 规定泛型类型
 
   public Book(String name, String head) throws ClassNotFoundException {// 只有名字的构造器
     this.bookName = name;
@@ -145,11 +90,11 @@ public class Book {
   }
 
 
-  public ArrayList&lt;Record&gt; getRecord() {
+  public ArrayList<Record> getRecord() {
     return record;
   }
 
-  public void setRecord(ArrayList&lt;Record&gt; record) {
+  public void setRecord(ArrayList<Record> record) {
     this.record = record;
   }
 
@@ -165,7 +110,7 @@ public class Book {
     private double totalfajin = 0;
     Date date = new Date();
     SimpleDateFormat timeformat = new SimpleDateFormat("yyyy-MM-dd");// 格式化时间输出
-
+    
     public Record() {
       try {
         Connection connection =
@@ -231,29 +176,14 @@ public class Book {
     }
 
     public double fajin(long checkInTime, double fajinfee) {
-
-      if (((checkInTime - checkOutTime) / (24 * 60 * 60 * 1000)) &gt; 30) {
+      
+      if (((checkInTime - checkOutTime) / (24 * 60 * 60 * 1000)) > 30) {
         totalfajin = ((checkInTime - checkOutTime) / (24 * 60 * 60 * 1000) - 30) * 2;// 默认罚金为2元一天，后期可以设置
         return totalfajin;
       }
       return totalfajin;
     }
-
+   
   }
 }
-</code></pre>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>hello～</title>
-      <link href="http://mtcle.github.io/blog//2014/01/hello/"/>
-      <pubDate>2014-01-10T00:00:00+08:00</pubDate>
-      <author>mtcle</author>
-      <guid>http://mtcle.github.io/blog//2014/01/hello</guid>
-      <content:encoded><![CDATA[<p>hello world~!~ 终于弄好了啊</p>
-]]></content:encoded>
-    </item>
-    
-  </channel>
-</rss>
+```
