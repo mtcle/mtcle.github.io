@@ -12,7 +12,7 @@
     <link href='/blog/media/webfonts/ss-standard.css' rel='stylesheet'>
     <link href="/blog/media/css/screen.css" rel="stylesheet">
 
-    <script type="text/javascript" src="/blog/media/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
   </head>
   <body>
     <div id="container">
@@ -35,7 +35,7 @@
       </div>
 
     <footer>
-        <p><small>Follow <a href="https://github.com/mtcle">Mtcle on github</a> | Copyright 2008 - {{site.time | date:"%Y"}} by <a href="http://mtcle.github.com/blog/about/">Mtcle</a> | <span class="label label-info">{{site.time | date:"%Y-%m-%d"}}</span></small></p>
+        <p><small>Follow <a href="https://github.com/mtcle">Mtcle on github</a> | Copyright 2010 - {{site.time | date:"%Y"}} by <a href="http://mtcle.github.com/blog/about/">Mtcle</a> | <span class="label label-info">{{site.time | date:"%Y-%m-%d"}}</span></small></p>
     </footer>
 
     </div>

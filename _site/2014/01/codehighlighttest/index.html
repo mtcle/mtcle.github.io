@@ -20,10 +20,10 @@
         <header>
         <div class="buttons">
           <a href="/blog" class="ss-icon" title="Go to homepage">老窝</a>
-          <a href="/blog/categories" class="ss-icon" title="Category" >list</a>
-          <a href="/blog/tags" class="ss-icon" title="Tag Cloud" >tags</a>
-          <a href="/blog/guestbook" class="ss-icon" title="Guest Book" >talk</a>
-          <a href="/blog/about" class="ss-icon" title="About" >it's me</a>
+          <a href="/blog/categories" class="ss-icon" title="Category" >列表</a>
+          <a href="/blog/tags" class="ss-icon" title="Tag Cloud" >标签</a>
+          <a href="/blog/guestbook" class="ss-icon" title="Guest Book" >留点什么</a>
+          <a href="/blog/about" class="ss-icon" title="About" >me</a>
           <a href="/blog/feed" class="ss-icon" title="Subscribe by RSS" >rss</a>
         </div>
         <h1>测试代码高亮</h1>
@@ -33,9 +33,15 @@
         <section class="post">
 <hr />
 
-<p>```java</p>
+<p><link rel="stylesheet" href="styles/default.css"></p>
 
-<pre><code> 
+<script src="/media/js/jquery-1.7.1.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<pre><code class="java">
 package model;
 
 import java.sql.Connection;
@@ -218,7 +224,7 @@ public class Book {
 </code></pre>
 
 
-<p>```</p>
+
 
 </section>
 <section class="meta">
@@ -293,7 +299,7 @@ $(function(){
       </div>
 
     <footer>
-        <p><small>Follow <a href="https://github.com/mtcle">Mtcle on github</a> | Copyright 2008 - 2014 by <a href="http://mtcle.github.com/blog/about/">Mtcle</a> | <span class="label label-info">2014-01-13</span></small></p>
+        <p><small>Follow <a href="https://github.com/mtcle">Mtcle on github</a> | Copyright 2010 - 2014 by <a href="http://mtcle.github.com/blog/about/">Mtcle</a> | <span class="label label-info">2014-01-13</span></small></p>
     </footer>
 
     </div>

@@ -6,8 +6,10 @@ category: [杂乱]
 tags: [杂乱]
 ---
 ---
-```java
-<pre><code> 
+<link rel="stylesheet" href="styles/default.css">
+<script src="/media/js/jquery-1.7.1.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<pre><code class="java">
 package model;
 
 import java.sql.Connection;
@@ -188,4 +190,4 @@ public class Book {
   }
 }
 </code></pre>
-```
+
