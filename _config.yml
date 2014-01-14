@@ -8,12 +8,7 @@ pygments: true
 paginate: 24
 safe: true
 lsi: false
-source: /home/mtcle/blog
 pygments: true
 BASE_PATH : http://www.mtcle.tk
 ASSET_PATH : http://www.mtcle.tk
-archive_path: /blog/archive.html
-categories_path : /blog/categories.html
-tags_path : /blog/tags.html
-atom_path : /blog/atom.xml
-rss_path : /blog/rss.xml
+
