@@ -1,6 +1,7 @@
 markdown: rdiscount
 permalink: /:year/:month/:title/
 url: http://mtcle.github.io/blog
+production_url : http://mtcle.github.io/blog
 author: mtcle
 feedburner : mtcle
 pygments: true
