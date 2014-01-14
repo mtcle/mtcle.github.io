@@ -18,7 +18,13 @@ layout: home
 <div align="justify">
 Quake with fear you mortal fools, for Plankton has just stolen this 
 webpage!  What it has to do with the Krabby Patty formula noone knows, 
-but you could go <a href="http://www.mtcle.tk/">home</a> to the homepage. Just be careful, you never know when that Plankton's going to turn up...
+but you can either <script type="text/javascript">
+emailE=('mtcle' + '@' + '126.com')
+document.write(
+ '<A HREF="mailto:' + emailE + '">' 
+ + 'report him to me' +'</a>'
+)
+</script><a href="mailto:mtcle@126.com"></a> or you could go <a href="http://www.mtcle.tk/">home</a> to the homepage. Just be careful, you never know when that Plankton's going to turn up...
 </div></font></td>
 </tr>
 </tbody></table>
