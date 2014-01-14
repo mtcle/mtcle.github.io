@@ -8,6 +8,7 @@ tags: [杂乱]
 ---
 <link rel="stylesheet" href="styles/default.css">
 <script src="/media/js/jquery-1.7.1.min.js"></script>
+<script src="/media/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <pre><code class="java">
 package model;
