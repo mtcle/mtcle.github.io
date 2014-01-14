@@ -10,3 +10,8 @@ lsi: false
 pygments: true
 BASE_PATH : http://mtcle.tk/blog
 production_url : http://mtcle.tk
+archive_path: /archive.html
+categories_path : /categories.html
+tags_path : /tags.html
+atom_path : /atom.xml
+rss_path : /rss.xml
