@@ -7,9 +7,10 @@ pygments: true
 paginate: 24
 safe: true
 lsi: false
+source: /blog
 pygments: true
 BASE_PATH : http://mtcle.github.io/blog
-production_url : http://mtcle.tk
+production_url : http://mtcle.github.io/blog
 archive_path: /blog/archive.html
 categories_path : /blog/categories.html
 tags_path : /blog/tags.html
