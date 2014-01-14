@@ -28,5 +28,4 @@ public class Book {
   private int rentCounts = 0;// 图书借阅次数
  		 private int bookRentLevel = 0;// 图书租金级别,默认为0,高级为1
   private Sequence sequence;// 定义一个图书序列号
-
 {% endhighlight %}
