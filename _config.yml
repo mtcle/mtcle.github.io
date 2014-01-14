@@ -11,6 +11,7 @@ lsi: false
 source: /home/mtcle/blog
 pygments: true
 BASE_PATH : http://mtcle.github.io/blog
+ASSET_PATH : http://mtcle.github.io/blog
 production_url : http://mtcle.github.io/blog
 archive_path: /blog/archive.html
 categories_path : /blog/categories.html
