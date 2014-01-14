@@ -1,7 +1,7 @@
 markdown: rdiscount
 permalink: /:year/:month/:title/
-url: http://mtcle.github.io/blog
-production_url : http://mtcle.github.io/blog
+url: http://mtcle.tk
+production_url : http://mtcle.tk
 author: mtcle
 feedburner : mtcle
 pygments: true
@@ -10,9 +10,8 @@ safe: true
 lsi: false
 source: /home/mtcle/blog
 pygments: true
-BASE_PATH : http://mtcle.github.io/blog
-ASSET_PATH : http://mtcle.github.io/blog
-production_url : http://mtcle.github.io/blog
+BASE_PATH : http://mtcle.tk
+ASSET_PATH : http://mtcle.tk
 archive_path: /blog/archive.html
 categories_path : /blog/categories.html
 tags_path : /blog/tags.html
