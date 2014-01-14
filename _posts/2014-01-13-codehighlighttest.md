@@ -6,6 +6,7 @@ category: [杂乱]
 tags: [杂乱]
 ---
 ---
+###例子
 {% highlight java %}
 
 package model;
@@ -26,6 +27,7 @@ public class Book {
   public String bookName;// 名字
   private int status = 0;// 图书当前状态，默认为0在馆可借，借出为1
   private int rentCounts = 0;// 图书借阅次数
- 		 private int bookRentLevel = 0;// 图书租金级别,默认为0,高级为1
+  private int bookRentLevel = 0;// 图书租金级别,默认为0,高级为1
   private Sequence sequence;// 定义一个图书序列号
+
 {% endhighlight %}
