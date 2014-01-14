@@ -4,3 +4,8 @@ url: http://mtcle.tk/
 author: mtcle
 pygments: true
 paginate: 24
+safe: true
+lsi: false
+pygments: true
+BASE_PATH : http://mtcle.tk/
+production_url : http://mtcle.tk/
