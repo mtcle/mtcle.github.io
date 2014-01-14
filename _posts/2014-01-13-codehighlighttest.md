@@ -7,8 +7,8 @@ tags: [杂乱]
 ---
 ---
 ###例子
-{% highlight java %}
 
+{% highlight java %}
 package model;
 import java.sql.Connection;
 import java.sql.DriverManager;
