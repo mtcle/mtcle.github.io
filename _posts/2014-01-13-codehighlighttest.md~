@@ -8,7 +8,7 @@ tags: [杂乱]
 ---
 ###例子
 
-
+{% highlight java %}
 package model;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -30,4 +30,4 @@ public class Book {
   private int bookRentLevel = 0;// 图书租金级别,默认为0,高级为1
   private Sequence sequence;// 定义一个图书序列号
 
-
+{% endhighlight %}
