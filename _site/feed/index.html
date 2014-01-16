@@ -7,8 +7,59 @@
     <title>mtcle</title>
     <link href="http://www.mtcle.tk/feed/" rel="self" />
     <link href="http://www.mtcle.tk/" />
-    <lastBuildDate>2014-01-15T20:52:20+08:00</lastBuildDate>
+    <lastBuildDate>2014-01-16T20:29:17+08:00</lastBuildDate>
     <webMaster>mtcle@126.com</webMaster>
+    
+    <item>
+      <title>自己简陋的代码高亮</title>
+      <link href="http://www.mtcle.tk/2014/01/highlight/"/>
+      <pubDate>2014-01-16T00:00:00+08:00</pubDate>
+      <author>mtcle</author>
+      <guid>http://www.mtcle.tk/2014/01/highlight</guid>
+      <content:encoded><![CDATA[<h2>最近折腾这个markdown的高亮,忽然想起来以前我们的一个小小作业,和高亮有关,觉得挺好玩的就拿出来折腾折腾.</h2>
+
+<p><strong>要求</strong> :java的高亮转变成html文件后里面依旧高亮 <br/>
+思路:
+<em>关键字搜索匹配高亮
+</em>注释搜索匹配
+<em>html特殊符号处理
+</em>注释中的关键词处理</p>
+
+<p>效果如下:</p>
+
+<p>java里面:(由于blog用的js代码高亮不是太完美)</p>
+
+<div class="highlight"><pre><code class="java">  
+
+<span class="kn">package</span> <span class="n">work1</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Messageprint</span> <span class="o">{</span>
+  <span class="c1">// 测试的文档test</span>
+  <span class="cm">/**</span>
+<span class="cm">   * ghghghgh</span>
+<span class="cm">   * </span>
+<span class="cm">   * @mtcle the first javawork</span>
+<span class="cm">   */</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Welcome\&quot;&lt;html&gt;&lt;/html&gt; to Java&quot;</span><span class="o">);</span><span class="c1">// 这里是注释</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Welcome to computer Science&quot;</span><span class="o">);</span><span class="c1">// 也是注释</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Programming is fun&quot;</span><span class="o">);</span><span class="c1">// 还是注释</span>
+  <span class="o">}</span>
+<span class="o">}</span>  
+ 
+</code></pre>
+</div>
+
+
+<hr />
+
+<p>html效果如下:  <br/>
+这里好像是markdown对于html的bug,段注释在html页面运行正常,放到markdown里就不行了主要是 * 的特殊含义吧  原<a href="/source/javaToHtml.html">html格式</a></p>
+
+<p><html><pre><font color="blue"><strong>package</strong></font> work1; </font> <p><font color="blue"><strong>public</strong></font> <font color="blue"><strong>class</strong></font> Messageprint { </font> <p>  <font color="green">// 测试的文档test </font> <p>   <font color="orange">/<strong>  </font> <p>    <font color="orange"><em>  ghghghgh </font> <p>    <font color="orange"></em>   </font> <p>    <font color="orange"><em>  @mtcle the first javawork </font> <p>    <font color="orange"></em>/</font>  </font> <p>  <font color="blue"></strong>public<strong></font> <font color="blue"></strong>static<strong></font> <font color="blue"></strong>void<strong></font> main(String[] args) { </font> <p>    System.<font color="blue"></strong>out<strong></font>.println( <font color="blue">" Welcome \" &amp;lthtml&amp;gt&amp;lt/html&amp;gt to Java "</font> );<font color="green">// 这里是注释 </font> <p>    System.<font color="blue"></strong>out<strong></font>.println( <font color="blue">" Welcome to computer Science "</font> );<font color="green">// 也是注释 </font> <p>    System.<font color="blue"></strong>out**</font>.println( <font color="blue">" Programming is fun "</font> );<font color="green">// 还是注释 </font> <p>  } </font> <p>} </font> <p></pre></html></p>
+
+<hr />
+]]></content:encoded>
+    </item>
     
     <item>
       <title>markdown随笔</title>
