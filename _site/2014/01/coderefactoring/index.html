@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="mtcle" />
-    <title>markdown随笔 by mtcle</title>
+    <title>小思 by mtcle</title>
     <link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAD/APr59wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIiIiIiIiAAAiIiIiIiIAACIiIiIiIgERERERERIiAREREREREiIBERERERESIgERIiIiERIiAREiIiIREiIBESIhERESIgERIiERERIiAREiIiIiIiIBESIiIiIiIgERIiIiIiIiAREREREREAABEREREREQAAERERERERAADgAQAA4AEAAOABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAA8AAAAPAAAADwAA" rel="icon" type="image/x-icon" />
     <link href="/feed/" rel="alternate" title="mtcle" type="application/atom+xml" />
     
@@ -26,33 +26,25 @@
           <a href="/about" class="ss-icon" title="About" >me</a>
           <a href="/feed" class="ss-icon" title="Subscribe by RSS" >rss</a>
         </div>
-        <h1>markdown随笔</h1>
+        <h1>小思</h1>
         </header>
         <hr>
         <article class="/content">
         <section class="post">
-<h2>markdown</h2>
+<h4>对图书管理系统又抽象出了个方法,自然而然的就删了好多代码,代码又精简了些许</h4>
 
 <hr />
 
-<h4><strong>makedown</strong>语法简单,上手很快,挺好玩的,我就把一些自己常用的总结一下,也在以后写的时候忘记了可以查看,纯为存档</h4>
+<p>删了好多代码后,忽然想起软件工程里面的极限编程了,咳咳,和那没多大关系(不过就是想到了而已).   <br/>
+拿到一个需求后不应该是立马就上手编写<br/>
+不管多大的项目,都应该进行设计(这里说的不是概要设计而是详细设计对于小项目可能往往都给省了),不是想当然的写到哪里是哪里,到最后就让自己陷入死胡同里了,或者就是多花冤枉时间.<br/>
+这次的这个系统就是刚开始的时候觉得上手很简单(<em>的确如此~</em>),对于一个数据库一个表的设计很随意,对于一个抽象也很无所谓      <br/>
+到了后期遇到问题的时候在回过头来修改表或者再抽象,虽说不上是再工程那么严重,最起码也要删除修改好多行<br/>
+对于先前的工作好多可能都是无用工(<em>当然啦,还是会有那么一点点收获的~!~</em>).</p>
 
 <hr />
 
-<p>1.从最开始的开始写吧,经常用的的那些比如说<em>test</em>这样的形式是用一对 * 或者 _ 括着就可以了好简单,也可以两对就是<strong>着重</strong>的括着,也可以三对则是<strong><em>这样</em></strong>形式. <br/>
-2.换行的话就是敲两个以上的空格加enter就行了,生成的页面就是换行了.<br/>
-3.分割线是三个以上的 * 或者 - 就行了 <br/>
-4.对于列表则更简单,只用在每行开头出加上 + - 就行了<br/>
-5.url也挺简单的 [urlname](http://www.mtcle.tk)<a href="http://www.mtcle.tk">urlname</a> 这样就可以插入了<br/>
-6.插入图片链接:![前面有个感叹号](/source/eclipse.gif)<img src="/source/eclipse.gif" alt="前面有个感叹号" />这样子就可以啦 (不过是不支持调整大小,可以用html标签做一下) ,简单好玩儿吧~<br/>
-7. # 号的数量1-6标识该行的行阶,开头的小于号标识引用,也可以整段的引用,例如:<br/>
->##test<br/>
->###test</p>
-
-<p>8.针对那种特殊符号 * -  _   [ ] 在markdown里面具有特殊功能的可以在前面和后面打上空格也可以在前面加上  \ 就实现了转义.      <br/>
-9.对于代码处理当然也很简单了,行内代码可以直接用一对`括起来就行了,例如: <code>system.out.printl()</code>如果代码       <br/>
-内部又出现了`在外面可以用两个,例如:<code>system.out.printl(`)</code>  实现转义.  <br/>
-10.对于编写文档类的基本上已经够用了,挺好玩挺简单的,可以试试</p>
+<p>最后忽然想起以前一个好朋友(小苏)老是拿着本&lt;代码重构>在那看(闲扯了),当时觉得用处不大,现在才知道其重要性,没事就回过头整理一下自己的workplace里面的代码.或多或少总有收获</p>
 
 <hr />
 
@@ -63,7 +55,7 @@
 </span>
 <span class="time">
   /
-  <time datetime="2014-01-15">2014-01-15</time>
+  <time datetime="2014-01-16">2014-01-16</time>
 </span>
 <br />
 <span class="license">
@@ -73,7 +65,7 @@
 <span class="categories">
   in categories
   
-  <a href="/categories/#笔记" title="笔记">笔记</a>&nbsp;
+  <a href="/categories/#闲扯" title="闲扯">闲扯</a>&nbsp;
   
 </span>
 
@@ -81,9 +73,11 @@
 <span class="tags">
   tagged with 
   
-  <a href="/tags/#markdown" title="markdown">markdown</a>&nbsp;
+  <a href="/tags/#java" title="java">java</a>&nbsp;
   
   <a href="/tags/#随笔" title="随笔">随笔</a>&nbsp;
+  
+  <a href="/tags/#闲扯" title="闲扯">闲扯</a>&nbsp;
   
 </span>
 
@@ -93,7 +87,7 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'mtcle'; // required: replace example with your forum shortname
-    var disqus_url = 'http://www.mtcle.tk/2014/01/markdownlearning/';
+    var disqus_url = 'http://www.mtcle.tk/2014/01/coderefactoring/';
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -111,12 +105,12 @@ $(function(){
     var url = false;
         if (e.which == 37 || e.which == 74) {  // Left arrow and J
             
-        url = 'http://www.mtcle.tk/2014/01/javalearning/';
+        url = 'http://www.mtcle.tk/2014/01/markdownlearning/';
         
         }
         else if (e.which == 39 || e.which == 75) {  // Right arrow and K
             
-        url = 'http://www.mtcle.tk/2014/01/coderefactoring/';
+        url = 'http://www.mtcle.tk/2014/01/highlight/';
         
         }
         if (url) {

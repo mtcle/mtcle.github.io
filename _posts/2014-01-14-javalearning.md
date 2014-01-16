@@ -2,7 +2,7 @@
 layout: post
 title: "近一个月java小思"
 description: "javalearning"
-category: [闲扯]
+category: "闲扯"
 tags: [java,学习,thinking]
 ---
 
