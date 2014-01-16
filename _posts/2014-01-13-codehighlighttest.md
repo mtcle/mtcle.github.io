@@ -2,7 +2,7 @@
 layout: post
 title: "测试代码高亮"
 description: "测试"
-category: [杂乱]
+category: "杂乱"
 tags: [杂乱]
 ---
 ---
