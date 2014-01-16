@@ -7,7 +7,7 @@
     <title>mtcle</title>
     <link href="http://www.mtcle.tk/feed/" rel="self" />
     <link href="http://www.mtcle.tk/" />
-    <lastBuildDate>2014-01-16T20:36:30+08:00</lastBuildDate>
+    <lastBuildDate>2014-01-16T20:44:03+08:00</lastBuildDate>
     <webMaster>mtcle@126.com</webMaster>
     
     <item>
@@ -16,18 +16,23 @@
       <pubDate>2014-01-16T00:00:00+08:00</pubDate>
       <author>mtcle</author>
       <guid>http://www.mtcle.tk/2014/01/highlight</guid>
-      <content:encoded><![CDATA[<h2>最近折腾这个markdown的高亮,忽然想起来以前我们的一个小小作业,和高亮有关,觉得挺好玩的就拿出来折腾折腾.</h2>
+      <content:encoded><![CDATA[<h3>最近折腾这个markdown的高亮,忽然想起来以前我们的一个小小作业,和高亮有关,觉得挺好玩的就拿出来折腾折腾.</h3>
 
 <p><strong>要求</strong> :java的高亮转变成html文件后里面依旧高亮 <br/>
-思路:
-<em>关键字搜索匹配高亮
-</em>注释搜索匹配
-<em>html特殊符号处理
-</em>注释中的关键词处理</p>
+思路:</p>
 
-<p>效果如下:</p>
+<ul>
+<li>关键字搜索匹配高亮</li>
+<li>注释搜索匹配</li>
+<li>html特殊符号处理</li>
+<li>注释中的关键词处理</li>
+</ul>
 
-<p>java里面:(由于blog用的js代码高亮不是太完美)</p>
+
+<hr />
+
+<p>效果如下:<br/>
+java里面:(由于blog用的js代码高亮不是太完美)</p>
 
 <div class="highlight"><pre><code class="java">  
 
@@ -80,7 +85,7 @@
 3.分割线是三个以上的 * 或者 - 就行了 <br/>
 4.对于列表则更简单,只用在每行开头出加上 + - 就行了<br/>
 5.url也挺简单的 [urlname](http://www.mtcle.tk)<a href="http://www.mtcle.tk">urlname</a> 这样就可以插入了<br/>
-6.插入图片链接:![前面有个感叹号](/home/mtcle/eclipse.gif)<img src="/source/eclipse.gif" alt="前面有个感叹号" />这样子就可以啦 (不过是不支持调整大小,可以用html标签做一下) ,简单好玩儿吧~<br/>
+6.插入图片链接:![前面有个感叹号](/source/eclipse.gif)<img src="/source/eclipse.gif" alt="前面有个感叹号" />这样子就可以啦 (不过是不支持调整大小,可以用html标签做一下) ,简单好玩儿吧~<br/>
 7. # 号的数量1-6标识该行的行阶,开头的小于号标识引用,也可以整段的引用,例如:<br/>
 >##test<br/>
 >###test</p>

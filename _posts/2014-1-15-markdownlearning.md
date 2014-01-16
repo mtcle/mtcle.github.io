@@ -14,7 +14,7 @@ tags: [markdown,随笔]
 3.分割线是三个以上的 * 或者 - 就行了   
 4.对于列表则更简单,只用在每行开头出加上 + - 就行了  
 5.url也挺简单的 \[urlname\]\(http://www.mtcle.tk\)[urlname](http://www.mtcle.tk) 这样就可以插入了  
-6.插入图片链接:\!\[前面有个感叹号\]\(/home/mtcle/eclipse.gif\)![前面有个感叹号](/source/eclipse.gif)这样子就可以啦 (不过是不支持调整大小,可以用html标签做一下) ,简单好玩儿吧~  
+6.插入图片链接:\!\[前面有个感叹号\]\(/source/eclipse.gif\)![前面有个感叹号](/source/eclipse.gif)这样子就可以啦 (不过是不支持调整大小,可以用html标签做一下) ,简单好玩儿吧~  
 7. # 号的数量1-6标识该行的行阶,开头的小于号标识引用,也可以整段的引用,例如:  
 \>##test  
 \>###test  
