@@ -35,7 +35,7 @@
       </div>
 
     <footer>
-        <p><small>Follow <a href="https://github.com/mtcle">Mtcle on github</a> | Copyright 2010 - {{site.time | date:"%Y"}} by <a href="http://www.mtcle.tk/about/">Mtcle</a> | <span class="label label-info">{{site.time | date:"%Y-%m-%d"}}</span></small></p>
+        <p><small>Follow <a href="https://github.com/mtcle">Mtcle on github</a> | Copyright 2010 - {{site.time | date:"%Y"}} by <a href="http://www.mtcle.tk/about/">Mtcle</a> | <span class="label label-info"> 最新更新{{site.time | date:"%Y-%m-%d"}}</span></small></p>
     </footer>
 	
 <script>

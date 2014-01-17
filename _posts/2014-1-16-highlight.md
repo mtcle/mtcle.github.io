@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "自己简陋的代码高亮"
+title: "自己写的丑陋代码高亮"
 description: "将java的高亮转变成html的高亮"
 category: "杂乱"
 tags: [java,随笔]
@@ -39,7 +39,7 @@ public class Messageprint {
 {% endhighlight %}  
 ---
 html效果如下:    
-这里好像是markdown对于html的bug,段注释在html页面运行正常,放到markdown里就不行了主要是 * 的特殊含义吧  原[html格式](/source/javaToHtml.html)
+这里好像是markdown对于大段html的支持不是太完美(个人感觉),段注释在html页面运行正常,放到markdown里就不行了主要是 * 的特殊含义吧  原[html格式](/source/javaToHtml.html)
 
 <html><pre><font color="blue">**package**</font> work1; </font> <p><font color="blue">**public**</font> <font color="blue">**class**</font> Messageprint { </font> <p>  <font color="green">// 测试的文档test </font> <p>   <font color="orange">/**  </font> <p>    <font color="orange">*  ghghghgh </font> <p>    <font color="orange">*   </font> <p>    <font color="orange">*  @mtcle the first javawork </font> <p>    <font color="orange">*/</font>  </font> <p>  <font color="blue">**public**</font> <font color="blue">**static**</font> <font color="blue">**void**</font> main(String[] args) { </font> <p>    System.<font color="blue">**out**</font>.println( <font color="blue">" Welcome \" &lthtml&gt&lt/html&gt to Java "</font> );<font color="green">// 这里是注释 </font> <p>    System.<font color="blue">**out**</font>.println( <font color="blue">" Welcome to computer Science "</font> );<font color="green">// 也是注释 </font> <p>    System.<font color="blue">**out**</font>.println( <font color="blue">" Programming is fun "</font> );<font color="green">// 还是注释 </font> <p>  } </font> <p>} </font> <p></pre></html>  
 
