@@ -5,7 +5,7 @@ production_url : http://www.mtcle.tk
 author: mtcle
 feedburner : mtcle
 pygments: true
-paginate: 24
+paginate: 10
 safe: true
 lsi: false
 pygments: true
