@@ -26,26 +26,72 @@
           <a href="/about" class="ss-icon" title="About" >me</a>
           <a href="/feed" class="ss-icon" title="Subscribe by RSS" >rss</a>
         </div>
-        <h1>小思</h1>
+        <h1>thinking of interface</h1>
         </header>
       
         <hr>
         <article class="/content">
         <section class="post">
-<h4>对图书管理系统又抽象出了个方法,自然而然的就删了好多代码,代码又精简了些许</h4>
+<p>出来混迟早是要还的<br/>
+java接口那部分一直是基础学习阶段难以掌握的部分，看看例子有点似懂非懂的，反正是自己还是不会用。</p>
+
+<h2>今天就整理一下，帮助自己理解吧。  </h2>
+
+<p>接口嘛，例如主板上面提供各种各样的接口，方便后期计算机升级扩展。java嘛我想也是出于这种考虑<br/>
+毕竟是完全面向对象的，肯定扩展得灵活，依赖得最小化。所以就有了interface～<br/>
+接口的引入一般会增加代码量（眼前是），但非常有利于后期扩展。（还是例如主板上留的内存插槽，肯定造价比<br/>
+直接把内存条焊接在上面高～～） <br/>
+好了，废话一大堆了，开始举个小例子用一下这个interface <br/>
+我们来个劲爆的例子，杀人，而杀人又有千千万万个方法（变态吧～为了增加印象嘛），为了解决这个问题，提供<br/>
+一个杀人接口只说是杀人，怎么杀人留给实现者来给出具体的解决方法。</p>
+
+<p>kill person：</p>
+
+<div class="highlight"><pre><code class="java">   
+
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">KillPerson</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">kill</span><span class="o">(</span><span class="n">Person</span> <span class="n">p</span><span class="o">);</span>
+
+<span class="o">}</span>  
+</code></pre>
+</div>
+
+
+<p>主流方法，枪杀：</p>
+
+<div class="highlight"><pre><code class="java">  
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GunKill</span> <span class="kd">implements</span> <span class="n">KillPerson</span><span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">kill</span><span class="o">(</span><span class="n">Person</span> <span class="n">p</span><span class="o">){</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">getName</span><span class="o">()+</span><span class="s">&quot;枪杀了！&quot;</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>  
+</code></pre>
+</div>
+
+
+<p>变态方法，下毒：</p>
+
+<div class="highlight"><pre><code class="java">  
+ 
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">YaoKill</span> <span class="kd">implements</span> <span class="n">KillPerson</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">kill</span><span class="o">(</span><span class="n">Person</span> <span class="n">p</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">p</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;毒药药死了！&quot;</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+
+<p>等等，还有n多方法可以实现杀死人，法律禁止，这里就不敢再说了，怕查水表呃呃<br/>
+这些具体怎么来杀就是实现了接口中的杀人方法。<br/>
+其实这里还是可以和内存条，内存插槽打比喻的。内存就是储存临时数据，主板生产内存插槽时，不管将来<br/>
+这里插的哪种品牌哪种容量的内存条，其相同的功能就都是存储数据的。<br/>
+这里杀人方法就是不同的内存条，杀人吶就是对应着存储数据。</p>
 
 <hr />
 
-<p>删了好多代码后,忽然想起软件工程里面的极限编程了,咳咳,和那没多大关系(不过就是想到了而已).   <br/>
-拿到一个需求后不应该是立马就上手编写<br/>
-不管多大的项目,都应该进行设计(这里说的不是概要设计而是详细设计对于小项目可能往往都给省了),不是想当然的写到哪里是哪里,到最后就让自己陷入死胡同里了,或者就是多花冤枉时间.<br/>
-这次的这个系统就是刚开始的时候觉得上手很简单(<em>的确如此~</em>),对于一个数据库一个表的设计很随意,对于一个抽象也很无所谓      <br/>
-到了后期遇到问题的时候在回过头来修改表或者再抽象,虽说不上是再工程那么严重,最起码也要删除修改好多行<br/>
-对于先前的工作好多可能都是无用工(<em>当然啦,还是会有那么一点点收获的~!~</em>).</p>
-
-<hr />
-
-<p>最后忽然想起以前一个好朋友(小苏)老是拿着本&lt;代码重构>在那看(闲扯了),当时觉得用处不大,现在才知道其重要性,没事就回过头整理一下自己的workplace里面的代码.或多或少总有收获</p>
+<p>好了，interface我就理解到这，有好的见解欢迎留言～</p>
 
 <hr />
 
@@ -56,7 +102,7 @@
 </span>
 <span class="time">
   /
-  <time datetime="2014-01-16">2014-01-16</time>
+  <time datetime="2014-02-21">2014-02-21</time>
 </span>
 <br />
 
@@ -64,7 +110,7 @@
 <span class="categories">
   in categories
   
-  <a href="/categories/#闲扯" title="闲扯">闲扯</a>&nbsp;
+  <a href="/categories/#笔记" title="笔记">笔记</a>&nbsp;
   
 </span>
 
@@ -72,11 +118,7 @@
 <span class="tags">
   tagged with 
   
-  <a href="/tags/#java" title="java">java</a>&nbsp;
-  
-  <a href="/tags/#随笔" title="随笔">随笔</a>&nbsp;
-  
-  <a href="/tags/#闲扯" title="闲扯">闲扯</a>&nbsp;
+  <a href="/tags/#interface" title="interface">interface</a>&nbsp;
   
 </span>
 
@@ -86,7 +128,7 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'mtcle'; // required: replace example with your forum shortname
-    var disqus_url = 'http://www.mtcle.tk/2014/01/coderefactoring/';
+    var disqus_url = 'http://www.mtcle.tk/2014/02/interfacethinking/';
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -104,13 +146,11 @@ $(function(){
     var url = false;
         if (e.which == 37 || e.which == 74) {  // Left arrow and J
             
-        url = 'http://www.mtcle.tk/2014/01/markdownlearning/';
+        url = 'http://www.mtcle.tk/2014/02/backandthinking/';
         
         }
         else if (e.which == 39 || e.which == 75) {  // Right arrow and K
             
-        url = 'http://www.mtcle.tk/2014/01/highlight/';
-        
         }
         if (url) {
             window.location = url;
