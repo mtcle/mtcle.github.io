@@ -3,5 +3,4 @@ layout: page
 title: 留言
 comments: yes
 ---
-
-可以使用评论留言～
+<img src="/source/comment.jpg" width="400" heigh="45">
