@@ -57,6 +57,7 @@
         <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>  
+  
 </code></pre>
 </div>
 
@@ -65,7 +66,9 @@
 对于Async对象有几个复写对象:分别为onPreExecute(),doInbackground(),onPostExecute(),这三个方法<br/>
 对应着一个异步操作的创建,运行和销毁.下面用我写的一个例子实际看一下:</p>
 
-<div class="highlight"><pre><code class="java">   <span class="c1">//进行异步操作之前的ui准备工作</span>
+<div class="highlight"><pre><code class="java">  
+
+   <span class="c1">//进行异步操作之前的ui准备工作</span>
     <span class="nd">@Override</span>
     <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPreExecute</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">textView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&quot;开始执行异步操作~&quot;</span><span class="o">);</span>
@@ -81,7 +84,8 @@
     <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPostExecute</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">textView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&quot;异步执行结束了,调用了onPostExecute方法&quot;</span> <span class="o">+</span> <span class="n">s</span><span class="o">);</span>
 
-    <span class="o">}</span>
+    <span class="o">}</span>  
+    
 </code></pre>
 </div>
 

@@ -7,7 +7,7 @@
     <title>mtcle</title>
     <link href="http://www.mtcle.tk/feed/" rel="self" />
     <link href="http://www.mtcle.tk/" />
-    <lastBuildDate>2014-03-17T19:30:39+08:00</lastBuildDate>
+    <lastBuildDate>2014-03-17T19:45:48+08:00</lastBuildDate>
     <webMaster>mtcle@126.com</webMaster>
     
     <item>
@@ -27,7 +27,8 @@
 
 <p>先把代码贴上来:</p>
 
-<div class="highlight"><pre><code class="java">   
+<div class="highlight"><pre><code class="java">    
+ 
  
             <span class="c1">//这个代码的实现目的是可以加载本地缓存里面的图片以减少流量和加载时间:</span>
             <span class="c1">//增加一个新个handler</span>
@@ -70,7 +71,7 @@
     <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ImageCallback</span> <span class="o">{</span>
         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">imageLoaded</span><span class="o">(</span><span class="n">Drawable</span> <span class="n">imageDrawable</span><span class="o">);</span><span class="c1">//待实现的方法,在CallbackImpl中实现了该方法</span>
     <span class="o">}</span>
-<span class="o">}</span>
+<span class="o">}</span>  
 </code></pre>
 </div>
 
@@ -114,6 +115,7 @@
         <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>  
+  
 </code></pre>
 </div>
 
@@ -122,7 +124,9 @@
 对于Async对象有几个复写对象:分别为onPreExecute(),doInbackground(),onPostExecute(),这三个方法<br/>
 对应着一个异步操作的创建,运行和销毁.下面用我写的一个例子实际看一下:</p>
 
-<div class="highlight"><pre><code class="java">   <span class="c1">//进行异步操作之前的ui准备工作</span>
+<div class="highlight"><pre><code class="java">  
+
+   <span class="c1">//进行异步操作之前的ui准备工作</span>
     <span class="nd">@Override</span>
     <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPreExecute</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">textView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&quot;开始执行异步操作~&quot;</span><span class="o">);</span>
@@ -138,7 +142,8 @@
     <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPostExecute</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">textView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&quot;异步执行结束了,调用了onPostExecute方法&quot;</span> <span class="o">+</span> <span class="n">s</span><span class="o">);</span>
 
-    <span class="o">}</span>
+    <span class="o">}</span>  
+    
 </code></pre>
 </div>
 

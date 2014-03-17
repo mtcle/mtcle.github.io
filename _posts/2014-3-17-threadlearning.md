@@ -12,7 +12,8 @@ tags: [android,learning]
 ***  
 
 先把代码贴上来:
-{% highlight java%}   
+{% highlight java%}    
+ 
  
             //这个代码的实现目的是可以加载本地缓存里面的图片以减少流量和加载时间:
             //增加一个新个handler
@@ -55,8 +56,9 @@ tags: [android,learning]
     public interface ImageCallback {
         public void imageLoaded(Drawable imageDrawable);//待实现的方法,在CallbackImpl中实现了该方法
     }
-}
-{%endhighlight%}  
+}  
+
+{% endhighlight %}  
 这个代码里面注意的:   
  
 新的线程里面的操作要在run()方法里面写.  
