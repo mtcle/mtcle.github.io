@@ -7,8 +7,84 @@
     <title>mtcle</title>
     <link href="http://www.mtcle.tk/feed/" rel="self" />
     <link href="http://www.mtcle.tk/" />
-    <lastBuildDate>2014-03-02T21:14:46+08:00</lastBuildDate>
+    <lastBuildDate>2014-03-17T19:04:01+08:00</lastBuildDate>
     <webMaster>mtcle@126.com</webMaster>
+    
+    <item>
+      <title>浅显的理解Async异步操作</title>
+      <link href="http://www.mtcle.tk/2014/03/androidlearning/"/>
+      <pubDate>2014-03-17T00:00:00+08:00</pubDate>
+      <author>mtcle</author>
+      <guid>http://www.mtcle.tk/2014/03/androidlearning</guid>
+      <content:encoded><![CDATA[<h3>Learning of Async</h3>
+
+<h4>异步操作</h4>
+
+<hr />
+
+<p>Android学习了一个多月,由于也有一定的java基础,java里面的好多方法基本都通用,也在于安卓 <br/>
+整体入门不是太难,所以基本也掌握了基础的安卓功能的用法.  <br/>
+由于移动设备的资源局限性,对于处理安卓和java还是有很多区别的.对于对象的new还有变量的作用域<br/>
+也格外需要处理.<br/>
+最近学习了多线程,有几种处理多线程的方法(主要是为了解决UI阻塞的问题)也看了,感觉也是似懂非懂的<br/>
+接受新鲜事务总是这样的,需要个时间.只要多用慢慢就理解其具体的用法和特征了.就像我们谁也没过多<br/>
+的学习汉语的语法不也是照样运用的很灵活么.都是一个道理.</p>
+
+<p>这个是个小小的异步操作的例子就是将耗时操作在另外开辟的线程中进行:</p>
+
+<div class="highlight"><pre><code class="java"><span class="c1">//传入三个Void对象,为空对象</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FirstAsyncTask</span> <span class="kd">extends</span> <span class="n">AsyncTask</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">,</span> <span class="n">Void</span><span class="o">,</span> <span class="n">Void</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="n">Void</span> <span class="nf">doInBackground</span><span class="o">(</span><span class="n">Void</span><span class="o">...</span> <span class="n">params</span><span class="o">)</span> <span class="o">{</span><span class="c1">//该方法是在新线程里面做的事情,不会阻塞原来的线程里的事情</span>
+        <span class="n">NetOperator</span> <span class="n">netOperator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">NetOperator</span><span class="o">();</span>
+        <span class="n">netOperator</span><span class="o">.</span><span class="na">operator</span><span class="o">();</span><span class="c1">//耗时操作,这里进行耗时例如访问网络,加载图片,下载等</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>  
+</code></pre>
+</div>
+
+
+<p>也就是在调用耗时操作是可以新开辟一个AsyncTask,在其中进行.<br/>
+对于Async对象有几个复写对象:分别为onPreExecute(),doInbackground(),onPostExecute(),这三个方法<br/>
+对应着一个异步操作的创建,运行和销毁.下面用我写的一个例子实际看一下:</p>
+
+<div class="highlight"><pre><code class="java">   <span class="c1">//进行异步操作之前的ui准备工作</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPreExecute</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">textView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&quot;开始执行异步操作~&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+       
+     <span class="c1">//该方法不运行在ui线程中,该方法不能设置ui相关的东西,可以进行后台耗时操作等,不能和UI进行交互</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="n">String</span> <span class="nf">doInBackground</span><span class="o">(</span><span class="n">Integer</span><span class="o">...</span> <span class="n">params</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">NetOperator</span> <span class="n">netOperator</span> <span class="o">=</span> <span class="k">new</span> <span class="n">NetOperator</span><span class="o">();</span>
+    <span class="o">}</span>
+         <span class="c1">//最后执行,是在ui中执行的</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPostExecute</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">textView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&quot;异步执行结束了,调用了onPostExecute方法&quot;</span> <span class="o">+</span> <span class="n">s</span><span class="o">);</span>
+
+    <span class="o">}</span>
+</code></pre>
+</div>
+
+
+<p>总结一下一个异步操作的运行过程:</p>
+
+<ul>
+<li>生成该类的对象,并调用execute方法</li>
+<li>首先执行onPreExecute,处理后台任务启动前的UI工作</li>
+<li>其次执行doInBackgrount方法</li>
+<li>最后执行 onPostExecute方法,和UI进行交互,返回UI结果</li>
+</ul>
+
+
+<hr />
+
+<hr />
+]]></content:encoded>
+    </item>
     
     <item>
       <title>continuous refactoring</title>
@@ -492,16 +568,6 @@ java里面:(由于blog用的js代码高亮不是太完美)</p>
 <h4>6.连接关闭：  <code>connection.close();</code></h4>
 
 <h4>7.若进行多条语句操作则必须添加事务处理。要在命令开始前设置成commit为false，对执行多条语句后进行commit,若异常后进行rollback，在finally里进行连接终端操作。</h4>
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>第一次</title>
-      <link href="http://www.mtcle.tk/2014/01/frist/"/>
-      <pubDate>2014-01-13T00:00:00+08:00</pubDate>
-      <author>mtcle</author>
-      <guid>http://www.mtcle.tk/2014/01/frist</guid>
-      <content:encoded><![CDATA[<p>一切看似简单的东西总能领悟到许多的东西。</p>
 ]]></content:encoded>
     </item>
     
