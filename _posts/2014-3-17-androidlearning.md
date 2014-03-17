@@ -18,7 +18,7 @@ Android学习了一个多月,由于也有一定的java基础,java里面的好多
 的学习汉语的语法不也是照样运用的很灵活么.都是一个道理.  
   
 这个是个小小的异步操作的例子就是将耗时操作在另外开辟的线程中进行:
-  {% highlight java%}
+  {% highlight java %}
 
 //传入三个Void对象,为空对象
 public class FirstAsyncTask extends AsyncTask<Void, Void, Void> {
@@ -29,11 +29,11 @@ public class FirstAsyncTask extends AsyncTask<Void, Void, Void> {
         return null;
     }
 }  
-{%endhighlight%}  
+{% endhighlight %}  
 也就是在调用耗时操作是可以新开辟一个AsyncTask,在其中进行.  
 对于Async对象有几个复写对象:分别为onPreExecute(),doInbackground(),onPostExecute(),这三个方法  
 对应着一个异步操作的创建,运行和销毁.下面用我写的一个例子实际看一下:  
-{% highlight java%}
+{% highlight java %}
    //进行异步操作之前的ui准备工作
     @Override
     protected void onPreExecute() {
@@ -51,7 +51,7 @@ public class FirstAsyncTask extends AsyncTask<Void, Void, Void> {
         textView.setText("异步执行结束了,调用了onPostExecute方法" + s);
 
     }
-{%endhighlight%}  
+{% endhighlight %}  
 总结一下一个异步操作的运行过程:   
 
 +   生成该类的对象,并调用execute方法
