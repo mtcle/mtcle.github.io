@@ -56,9 +56,10 @@ tags: [android,learning]
     public interface ImageCallback {
         public void imageLoaded(Drawable imageDrawable);//待实现的方法,在CallbackImpl中实现了该方法
     }
-}  
+}    
 
-{% endhighlight %}  
+  
+  {% endhighlight %}  
 这个代码里面注意的:   
  
 新的线程里面的操作要在run()方法里面写.  
