@@ -8,7 +8,7 @@
   <channel>
     <title>{{ site.author }}</title>
     <link href="{{ site.url }}/feed/" rel="self" />
-    <link href="http://mtcle.github.io/blog/" />
+    <link href="http://www.mtcle.tk/" />
     <lastBuildDate>{{ site.time | date_to_xmlschema }}</lastBuildDate>
     <webMaster>mtcle@126.com</webMaster>
     {% for post in site.posts limit:10 %}
