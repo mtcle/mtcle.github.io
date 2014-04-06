@@ -1,0 +1,293 @@
+layout: post
+title: "个人所做测试网页"
+description: "测试"
+category: "学习js笔记"
+tags: [js,learning]
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0; maximum-scale=1.0, user-scalable=no" />
+		<title>
+		   闫新亚个人简历	</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/images/favicon.ico">
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic,400italic,600italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/css/bootstrap.min.css" type="text/css" />
+	<link rel="stylesheet" href="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/style.css" type="text/css" />
+	<link rel="stylesheet" href="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/css/flywheel.css?40982" type="text/css" />
+	<script src="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/js/jquery.js"></script>
+
+	<script src="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/js/waypoints.min.js"></script>
+	<script src="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/js/waypoints-sticky.min.js"></script>
+	<script src="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/js/jquery.watermark.min.js"></script>
+	<script src="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/js/jquery.validate.min.js"></script>
+	<script src="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/js/home-tour.js"></script>
+	<script src="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/js/jquery.simplemodal.1.4.4.min.js"></script>
+	<script src="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/js/retina.js"></script>
+	<script src="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/js/jquery.cookie.js?28090"></script>
+	<script src="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/js/flywheel.js?281"></script>
+
+			<script src="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/js/jquery.typer.js?120313"></script>
+		<link rel="stylesheet" href="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/css/video-home.css?123456" type="text/css" />
+		<script src="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/js/home-video-tour.js?012914"></script>	
+	
+	
+	<link rel="pingback" href="http://getflywheel.com/xmlrpc.php" />
+		
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.4.24 - http://yoast.com/wordpress/seo/ -->
+<title>Flywheel – Managed WordPress hosting – Built for designers</title>
+<meta name="description" content="Flywheel is a premium WordPress hosting company built specifically for designers, freelancers and creative agencies. Launch WordPress sites quickly and easily with Flywheel&#039;s managed WordPress hosting platform."/>
+<link rel="canonical" href="http://getflywheel.com/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Flywheel – Managed WordPress hosting – Built for designers" />
+<meta property="og:description" content="Flywheel is a premium WordPress hosting company built specifically for designers, freelancers and creative agencies. Launch WordPress sites quickly and easily with Flywheel&#039;s managed WordPress hosting platform." />
+<meta property="og:url" content="http://getflywheel.com/" />
+<meta property="og:site_name" content="Flywheel - Managed WordPress hosting – Built for designers" />
+<meta property="article:publisher" content="http://facebook.com/getflywheel" />
+<meta property="article:published_time" content="2013-08-27T16:44:56+00:00" />
+<meta property="article:modified_time" content="2013-12-02T20:35:06+00:00" />
+<meta property="og:image" content="http://flywheel2013.flywheelsites.com/wp-content/uploads/2013/09/logo_white.png" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@heyflywheel"/>
+<meta name="twitter:domain" content="Flywheel - Managed WordPress hosting – Built for designers"/>
+<meta name="twitter:creator" content="@heyflywheel"/>
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="Flywheel - Managed WordPress hosting – Built for designers &raquo; Feed" href="http://getflywheel.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Flywheel - Managed WordPress hosting – Built for designers &raquo; Comments Feed" href="http://getflywheel.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Flywheel - Managed WordPress hosting – Built for designers &raquo; Home Comments Feed" href="http://getflywheel.com/home/feed/" />
+<script type='text/javascript' src='http://getflywheel-flywheel.netdna-ssl.com/wp-includes/js/jquery/jquery.js?ver=1.10.2'></script>
+<script type='text/javascript' src='http://getflywheel-flywheel.netdna-ssl.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://getflywheel-flywheel.netdna-ssl.com/wp-includes/js/comment-reply.min.js?ver=3.8.1'></script>
+<link rel='shortlink' href='http://getflywheel.com/?p=4' />
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+	<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-35099371-1']);
+		  _gaq.push(['_setDomainName', 'getflywheel.com']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+	</script>
+	<script type="text/javascript">
+	  var _kmq = _kmq || [];
+	  var _kmk = _kmk || '78353d72b42f9379496cdb57594b43e553918ecc';
+	  function _kms(u){
+	    setTimeout(function(){
+	      var d = document, f = d.getElementsByTagName('script')[0],
+	      s = d.createElement('script');
+	      s.type = 'text/javascript'; s.async = true; s.src = u;
+	      f.parentNode.insertBefore(s, f);
+	    }, 1);
+	  }
+	  _kms('//i.kissmetrics.com/i.js');
+	  _kms('//doug1izaerwt3.cloudfront.net/' + _kmk + '.1.js');
+	</script>
+	
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.4.24 - http://yoast.com/wordpress/seo/ -->
+<title>Flywheel – Managed WordPress hosting – Built for designers</title>
+<meta name="description" content="Flywheel is a premium WordPress hosting company built specifically for designers, freelancers and creative agencies. Launch WordPress sites quickly and easily with Flywheel&#039;s managed WordPress hosting platform."/>
+<link rel="canonical" href="http://getflywheel.com/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Flywheel – Managed WordPress hosting – Built for designers" />
+<meta property="og:description" content="Flywheel is a premium WordPress hosting company built specifically for designers, freelancers and creative agencies. Launch WordPress sites quickly and easily with Flywheel&#039;s managed WordPress hosting platform." />
+<meta property="og:url" content="http://getflywheel.com/" />
+<meta property="og:site_name" content="Flywheel - Managed WordPress hosting – Built for designers" />
+<meta property="article:publisher" content="http://facebook.com/getflywheel" />
+<meta property="article:published_time" content="2013-08-27T16:44:56+00:00" />
+<meta property="article:modified_time" content="2013-12-02T20:35:06+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@heyflywheel"/>
+<meta name="twitter:domain" content="Flywheel - Managed WordPress hosting – Built for designers"/>
+<meta name="twitter:creator" content="@heyflywheel"/>
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="Flywheel - Managed WordPress hosting – Built for designers &raquo; Feed" href="http://getflywheel.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Flywheel - Managed WordPress hosting – Built for designers &raquo; Comments Feed" href="http://getflywheel.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Flywheel - Managed WordPress hosting – Built for designers &raquo; Home Comments Feed" href="http://getflywheel.com/home/feed/" />
+<link rel='shortlink' href='http://getflywheel.com/?p=4' />
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+ 
+</head>
+
+<body class="home page page-id-4 page-template page-template-template_home_video-php" id="Home">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=297771930247195";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class = "wrapper">
+    <div class = "main">
+    	<div class="video-background"></div>
+		<div class="video-content">
+			<div class="content-wrap visible-md visible-lg">
+				<h3> 
+					<span data-typer-targets="欢迎来到, Mtcle's ">
+					hello
+					</span> 
+					<br> 个人简历
+				</h3>		
+			</div>
+			<div class="mobile-content-wrap">
+				<h3> 
+					<span data-typer-targets="欢迎来到, Mtcle's page">
+					Beautifully simple
+					</span> 
+					<br> WordPress hosting
+				</h3>
+				<iframe src="//fast.wistia.net/embed/iframe/dcgo617694" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="250" height="141"></iframe>
+				
+			</div>
+		</div>
+    </div>
+</div>
+<div class="video-nav">
+	<div class="container">
+		
+<a href="#" class="toggle-nav"><img src="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/images/toggle-nav.png"></a>
+	</div>
+</div>
+<div class="page-wrap">
+	
+	<div class="software-overview">
+		<div class="container">
+			<h3>详细的了解一下mtcle吧</h3>
+			<h4 class="sub-title">自娱帝? 技术宅? 闷骚男? 苦逼码农?</h4>
+			<div class="software-overview-nav">
+				<a href="#" class="active" id="slide1">个人介绍</a>
+				<a href="#" id="slide2">技能和证书</a>
+				<a href="#" id="slide3">工作经历</a>
+				<a href="#" id="slide4">教育背景</a>
+			</div>
+			<div class="software-overview-slides">
+				<img src="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/images/video-home/macbookair.png">
+				<div class="slides">
+
+					<div class="slide slide1">
+						<img src="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/images/video-home/screen1.png" class="screenshot" width="720" height="402">
+						
+						<div class="summary">
+							<h3>Mtcle's summary</h3>
+							<p>
+								一个初出茅庐的码农,会使用java,android,javascript,html,visual basic,visual fox,等语言.使用过sqlserver,mysql,sqlite等数据库.
+							</p>							
+						</div>
+					</div>
+
+					<div class="slide slide2">
+						<img src="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/images/video-home/screen3.png" class="screenshot" width="720" height="402">
+						
+						<div class="summary">
+							<h3>mtcle有哪些技能证书?</h3>
+							<p>
+								<ul class="list-group">
+  <li class="list-group-item">软考中级数据库</li>
+  <li class="list-group-item">国考四级网络</li>
+  <li class="list-group-item">国考二级vb</li>
+  <li class="list-group-item">CET-4</li>
+</ul>
+						</p>							
+						</div>
+					</div>
+
+					<div class="slide slide3">
+						<img src="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/images/video-home/screen1.png" class="screenshot" width="720" height="402">
+						
+						<div class="summary">
+							<h3>Mtcle's job experience</h3>
+							<p>
+								世为软件研究院android开发
+							</p>							
+						</div>
+					</div>
+					<div class="slide slide4">
+						<img src="http://getflywheel-flywheel.netdna-ssl.com/wp-content/themes/flywheel2013/images/video-home/screen2.png" class="screenshot" width="720" height="402">
+						
+						<div class="summary">
+							<h3>Mtcle在哪里接受的教育?</h3>
+									<ul class="list-group">
+  <li class="list-group-item">郑州大学</li>
+  <li class="list-group-item">舞阳第一中学</li>
+  <li class="list-group-item">舞钢艺术中学</li>
+  <li class="list-group-item">刘沟小学</li>
+</ul>												
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="twitter-customers">
+		<div class="shadow"></div>
+		<h3>生命不止,奋斗不息</h3>
+		<h4 class="sub-title">
+			一句名言:优秀的判断力来自经验，但经验来自于错误的判断
+		</h4>
+		<div class="tweets">
+			<div class="tweets-wrap">
+							
+			</div>
+		</div>
+	<a href="http://www.mtcle.net/about">快来联系优秀的mtcle吧~</a>
+	
+
+	<div class="video-modal flywheel-modal video-agency-modal">
+		<a href="#" class="close">&times;</a>
+			<iframe id="video-agency" src="http://fast.wistia.net/embed/iframe/dcgo617694" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" width="940" height="529"></iframe>
+		<div class="sign-up-video">
+			<h2>Launch a WordPress site in seconds. Get started for free! <a href="http://app.getflywheel.com/signup">SIGN UP</a></h2>
+		</div>
+	</div>
+
+		</div>
+	<div class="footer">
+		<div class="container">				
+		</div>
+	</div>
+	<script src="//fast.wistia.net/static/iframe-api-v1.js"></script>
+		
+	
+
+
+
+	<script type="text/javascript">
+	adroll_adv_id = "DDOIQGI2FBFFTAV3X2JWGJ";
+	adroll_pix_id = "OXE7RZZJFNGEFG7P7I2KU4";
+	(function () {
+	var oldonload = window.onload;
+	window.onload = function(){
+	   __adroll_loaded=true;
+	   var scr = document.createElement("script");
+	   var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+	   scr.setAttribute('async', 'true');
+	   scr.type = "text/javascript";
+	   scr.src = host + "/j/roundtrip.js";
+	   ((document.getElementsByTagName('head') || [null])[0] ||
+	    document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+	   if(oldonload){oldonload()}};
+	}());
+	</script>
+	  
+
+</body>
+
+</html>
+</div>
