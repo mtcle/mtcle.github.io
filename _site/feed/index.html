@@ -7,8 +7,35 @@
     <title>mtcle</title>
     <link href="http://www.mtcle.tk/feed/" rel="self" />
     <link href="http://www.mtcle.net/" />
-    <lastBuildDate>2014-07-23T16:04:42+08:00</lastBuildDate>
+    <lastBuildDate>2014-07-24T11:56:26+08:00</lastBuildDate>
     <webMaster>mtcle@126.com</webMaster>
+    
+    <item>
+      <title>titanium跨平台开发之路</title>
+      <link href="http://www.mtcle.tk/2014/07/js_titanium_mobile/"/>
+      <pubDate>2014-07-24T00:00:00+08:00</pubDate>
+      <author>mtcle</author>
+      <guid>http://www.mtcle.tk/2014/07/js_titanium_mobile</guid>
+      <content:encoded><![CDATA[<p>对于我来说是真正的算上是项目来说就是上一次用titanium跨平台开发的hrool<br/>
+虽然来说是直接胎死腹中吧，单也毕竟是真正的项目。也学到了不少东西，这次半途<br/>
+插入的项目仍然是titanium的项目，这次的项目在业务上比较复杂，技术上面难点还好<br/>
+吧，目前一期版本也已经上线了，虽说是android的版本，ios在调整，整体感觉开发的<br/>
+速度还行。总结以下titanium开发吧</p>
+
+<ul>
+<li>apk包太大，毕竟是用于js写的，轻轻松松40M，这让很多手机根本跑不动。</li>
+<li>实现一些底层的功能，titanium是难以胜任的，都要通过写第三方module，这就大大的增加了技术难度（需要写两套）</li>
+<li>另外的就是titanium在做界面上也比较费劲，虽说titanium有可视化的插件，毕竟要钱的。。。</li>
+<li>我感觉最最大的问题吧就是它在国内普及太低，很难查到中文的相关资料，国外虽说多点，但在开发中也有很多问题
+难以解决。</li>
+</ul>
+
+
+<hr />
+
+<p>我个人吧，对于新的东西并不排斥，希望这个nx的东西赶紧普及起来，让跨平台真正的飞起来。</p>
+]]></content:encoded>
+    </item>
     
     <item>
       <title>titanium js</title>
@@ -592,31 +619,6 @@ java里面:(由于blog用的js代码高亮不是太完美)</p>
 这里好像是markdown对于大段html的支持不是太完美(个人感觉),段注释在html页面运行正常,放到markdown里就不行了主要是 * 的特殊含义吧  原<a href="/source/javaToHtml.html">html格式</a></p>
 
 <p><html><pre><font color="blue"><strong>package</strong></font> work1; </font> <p><font color="blue"><strong>public</strong></font> <font color="blue"><strong>class</strong></font> Messageprint { </font> <p>  <font color="green">// 测试的文档test </font> <p>   <font color="orange">/<strong>  </font> <p>    <font color="orange"><em>  ghghghgh </font> <p>    <font color="orange"></em>   </font> <p>    <font color="orange"><em>  @mtcle the first javawork </font> <p>    <font color="orange"></em>/</font>  </font> <p>  <font color="blue"></strong>public<strong></font> <font color="blue"></strong>static<strong></font> <font color="blue"></strong>void<strong></font> main(String[] args) { </font> <p>    System.<font color="blue"></strong>out<strong></font>.println( <font color="blue">" Welcome \" &amp;lthtml&amp;gt&amp;lt/html&amp;gt to Java "</font> );<font color="green">// 这里是注释 </font> <p>    System.<font color="blue"></strong>out<strong></font>.println( <font color="blue">" Welcome to computer Science "</font> );<font color="green">// 也是注释 </font> <p>    System.<font color="blue"></strong>out**</font>.println( <font color="blue">" Programming is fun "</font> );<font color="green">// 还是注释 </font> <p>  } </font> <p>} </font> <p></pre></html></p>
-
-<hr />
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>小思</title>
-      <link href="http://www.mtcle.tk/2014/01/coderefactoring/"/>
-      <pubDate>2014-01-16T00:00:00+08:00</pubDate>
-      <author>mtcle</author>
-      <guid>http://www.mtcle.tk/2014/01/coderefactoring</guid>
-      <content:encoded><![CDATA[<h4>对图书管理系统又抽象出了个方法,自然而然的就删了好多代码,代码又精简了些许</h4>
-
-<hr />
-
-<p>删了好多代码后,忽然想起软件工程里面的极限编程了,咳咳,和那没多大关系(不过就是想到了而已).   <br/>
-拿到一个需求后不应该是立马就上手编写<br/>
-不管多大的项目,都应该进行设计(这里说的不是概要设计而是详细设计对于小项目可能往往都给省了),不是想当然的写到哪里是哪里,到最后就让自己陷入死胡同里了,或者就是多花冤枉时间.<br/>
-这次的这个系统就是刚开始的时候觉得上手很简单(<em>的确如此~</em>),对于一个数据库一个表的设计很随意,对于一个抽象也很无所谓      <br/>
-到了后期遇到问题的时候在回过头来修改表或者再抽象,虽说不上是再工程那么严重,最起码也要删除修改好多行<br/>
-对于先前的工作好多可能都是无用工(<em>当然啦,还是会有那么一点点收获的~!~</em>).</p>
-
-<hr />
-
-<p>最后忽然想起以前一个好朋友(小苏)老是拿着本&lt;代码重构>在那看(闲扯了),当时觉得用处不大,现在才知道其重要性,没事就回过头整理一下自己的workplace里面的代码.或多或少总有收获</p>
 
 <hr />
 ]]></content:encoded>
