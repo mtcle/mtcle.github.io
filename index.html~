@@ -3,11 +3,7 @@ title: Mtcle
 layout: page
 ---
 
-<script src='//www.google.com/jsapi' type='text/javascript'></script>
-<script type='text/javascript'>
-
-</script>
-
+<script charset="gbk" src="http://www.baidu.com/js/opensug.js"></script>
 <ul class="listing">
 {% for post in paginator.posts %}
   {% capture y %}{{post.date | date:"%Y"}}{% endcapture %}
