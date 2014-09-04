@@ -1,7 +1,7 @@
 markdown: rdiscount
 permalink: /:year/:month/:title/
-url: http://www.mtcle.net
-production_url : http://www.mtcle.net
+url: http://www.mtcle.tk
+production_url : http://www.mtcle.tk
 author: mtcle
 feedburner : mtcle
 pygments: true
