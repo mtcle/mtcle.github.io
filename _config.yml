@@ -1,14 +1,13 @@
 markdown: rdiscount
 permalink: /:year/:month/:title/
-url: http://www.mtcle.net
-production_url : http://www.mtcle.net
+url: http://www.mtcle.ml
+production_url : http://www.mtcle.ml
 author: mtcle
-feedburner : mtcle
-pygments: true
-paginate: 10
+highlighter: pygments
+gems: [jekyll-paginate]
 safe: true
 lsi: false
-pygments: true
-BASE_PATH : http://www.mtcle.net
-ASSET_PATH : http://www.mtcle.net
+paginator : 10
+BASE_PATH : http://www.mtcle.ml
+ASSET_PATH : http://www.mtcle.ml
 
