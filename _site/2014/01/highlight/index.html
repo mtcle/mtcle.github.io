@@ -33,50 +33,53 @@
         <hr>
         <article class="/content">
         <section class="post">
-<h3>最近折腾这个markdown的高亮,忽然想起来以前我们的一个小小作业,和高亮有关,觉得挺好玩的就拿出来折腾折腾.</h3>
+<h3 id="markdown">最近折腾这个markdown的高亮,忽然想起来以前我们的一个小小作业,和高亮有关,觉得挺好玩的就拿出来折腾折腾.</h3>
 
-<p><strong>要求</strong> :java的高亮转变成html文件后里面依旧高亮 <br/>
+<p><strong>要求</strong> :java的高亮转变成html文件后里面依旧高亮 <br />
 思路:</p>
 
 <ul>
-<li>关键字搜索匹配高亮</li>
-<li>注释搜索匹配</li>
-<li>html特殊符号处理</li>
-<li>注释中的关键词处理</li>
+  <li>关键字搜索匹配高亮</li>
+  <li>注释搜索匹配</li>
+  <li>html特殊符号处理</li>
+  <li>注释中的关键词处理</li>
 </ul>
 
-
 <hr />
-
-<p>效果如下:<br/>
+<p>效果如下:<br />
 java里面:(由于blog用的js代码高亮不是太完美)</p>
 
-<p><figure class="highlight"><pre><code class="language-java" data-lang="java"></p>
+<figure class="highlight"><pre><code class="language-java" data-lang="java">  
 
-<p><span class="kn">package</span> <span class="n">work1</span><span class="o">;</span>
+<span class="kn">package</span> <span class="n">work1</span><span class="o">;</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Messageprint</span> <span class="o">{</span>
   <span class="c1">// 测试的文档test</span>
-  <span class="cm">/<em>*</span>
+  <span class="cm">/**</span>
 <span class="cm">   * ghghghgh</span>
 <span class="cm">   * </span>
 <span class="cm">   * @mtcle the first javawork</span>
-<span class="cm">   </em>/</span>
+<span class="cm">   */</span>
   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Welcome&amp;quot;&lt;html&gt;&lt;/html&gt; to Java&quot;</span><span class="o">);</span><span class="c1">// 这里是注释</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Welcome\&quot;&lt;html&gt;&lt;/html&gt; to Java&quot;</span><span class="o">);</span><span class="c1">// 这里是注释</span>
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Welcome to computer Science&quot;</span><span class="o">);</span><span class="c1">// 也是注释</span>
     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Programming is fun&quot;</span><span class="o">);</span><span class="c1">// 还是注释</span>
   <span class="o">}</span>
-<span class="o">}</span><br/>
- </code></pre></figure></p>
+<span class="o">}</span>  
+ </code></pre></figure>
 
 <hr />
-
-<p>html效果如下:  <br/>
+<p>html效果如下:  <br />
 这里好像是markdown对于大段html的支持不是太完美(个人感觉),段注释在html页面运行正常,放到markdown里就不行了主要是 * 的特殊含义吧  原<a href="/source/javaToHtml.html">html格式</a></p>
 
-<p><html><pre><font color="blue"><strong>package</strong></font> work1; </font> <p><font color="blue"><strong>public</strong></font> <font color="blue"><strong>class</strong></font> Messageprint { </font> <p>  <font color="green">// 测试的文档test </font> <p>   <font color="orange">/<strong>  </font> <p>    <font color="orange"><em>  ghghghgh </font> <p>    <font color="orange"></em>   </font> <p>    <font color="orange"><em>  @mtcle the first javawork </font> <p>    <font color="orange"></em>/</font>  </font> <p>  <font color="blue"></strong>public<strong></font> <font color="blue"></strong>static<strong></font> <font color="blue"></strong>void<strong></font> main(String[] args) { </font> <p>    System.<font color="blue"></strong>out<strong></font>.println( <font color="blue">" Welcome \" &amp;lthtml&amp;gt&amp;lt/html&amp;gt to Java "</font> );<font color="green">// 这里是注释 </font> <p>    System.<font color="blue"></strong>out<strong></font>.println( <font color="blue">" Welcome to computer Science "</font> );<font color="green">// 也是注释 </font> <p>    System.<font color="blue"></strong>out**</font>.println( <font color="blue">" Programming is fun "</font> );<font color="green">// 还是注释 </font> <p>  } </font> <p>} </font> <p></pre></html></p>
+<html><pre><font color="blue">**package**</font> work1;  <p><font color="blue">**public**</font> <font color="blue">**class**</font> Messageprint {  <p>  <font color="green">// 测试的文档test </font> <p>   <font color="orange">/**  </font> <p>    <font color="orange">*  ghghghgh </font> <p>    <font color="orange">*   </font> <p>    <font color="orange">*  @mtcle the first javawork </font> <p>    <font color="orange">*/</font>   <p>  <font color="blue">**public**</font> <font color="blue">**static**</font> <font color="blue">**void**</font> main(String[] args) {  <p>    System.<font color="blue">**out**</font>.println( <font color="blue">" Welcome \" &amp;lthtml&amp;gt&amp;lt/html&amp;gt to Java "</font> );<font color="green">// 这里是注释 </font> <p>    System.<font color="blue">**out**</font>.println( <font color="blue">" Welcome to computer Science "</font> );<font color="green">// 也是注释 </font> <p>    System.<font color="blue">**out**</font>.println( <font color="blue">" Programming is fun "</font> );<font color="green">// 还是注释 </font> <p>  }  <p>}  <p>  
 
-<hr />
+
+
+
+-------
+
+
+</p></p></p></p></p></p></p></p></p></p></p></p></p></p></pre></html>
 
 </section>
 <section class="meta">

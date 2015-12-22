@@ -34,24 +34,23 @@
         <article class="/content">
         <section class="post">
 <hr />
+<p>###例子</p>
 
-<h3>例子</h3>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">model</span><span class="o">;</span>
 
-<p><figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">model</span><span class="o">;</span></p>
-
-<p><span class="kn">import</span> <span class="nn">java.sql.Connection</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.Connection</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.sql.DriverManager</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.sql.SQLException</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.sql.Statement</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span></p>
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
 
-<p><span class="kn">import</span> <span class="nn">javax.swing.JOptionPane</span><span class="o">;</span></p>
+<span class="kn">import</span> <span class="nn">javax.swing.JOptionPane</span><span class="o">;</span>
 
-<p><span class="cm">/<em>*</span>
+<span class="cm">/**</span>
 <span class="cm"> * 图书类 包括名字，状态，借出次数 属性 包括记录卡 租金类别</span>
-<span class="cm"> * </em>/</span>
+<span class="cm"> * */</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Book</span> <span class="o">{</span>
   <span class="kd">public</span> <span class="n">String</span> <span class="n">bookName</span><span class="o">;</span><span class="c1">// 名字</span>
   <span class="kd">private</span> <span class="kt">int</span> <span class="n">status</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span><span class="c1">// 图书当前状态，默认为0在馆可借，借出为1</span>
@@ -59,16 +58,16 @@
   <span class="kd">private</span> <span class="kt">int</span> <span class="n">bookRentLevel</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span><span class="c1">// 图书租金级别,默认为0,高级为1</span>
   <span class="kd">private</span> <span class="n">Sequence</span> <span class="n">sequence</span><span class="o">;</span><span class="c1">// 定义一个图书序列号</span>
   <span class="kd">private</span> <span class="n">String</span> <span class="n">Id</span><span class="o">;</span>
-  <span class="kd">private</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Record</span><span class="o">&gt;</span> <span class="n">record</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Record</span><span class="o">&gt;();</span> <span class="c1">// 规定泛型类型</span></p>
+  <span class="kd">private</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Record</span><span class="o">&gt;</span> <span class="n">record</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Record</span><span class="o">&gt;();</span> <span class="c1">// 规定泛型类型</span>
 
-<p>  <span class="kd">public</span> <span class="nf">Book</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="n">String</span> <span class="n">head</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ClassNotFoundException</span> <span class="o">{</span><span class="c1">// 只有名字的构造器</span>
+  <span class="kd">public</span> <span class="nf">Book</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="n">String</span> <span class="n">head</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ClassNotFoundException</span> <span class="o">{</span><span class="c1">// 只有名字的构造器</span>
     <span class="k">this</span><span class="o">.</span><span class="na">bookName</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
     <span class="k">this</span><span class="o">.</span><span class="na">sequence</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Sequence</span><span class="o">(</span><span class="n">head</span><span class="o">);</span>
     <span class="k">this</span><span class="o">.</span><span class="na">Id</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
     <span class="k">this</span><span class="o">.</span><span class="na">bookRentLevel</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-  <span class="o">}</span></p>
+  <span class="o">}</span>
 
-<p>  <span class="kd">public</span> <span class="nf">Book</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="n">String</span> <span class="n">head</span><span class="o">,</span> <span class="kt">int</span> <span class="n">bookRentLevel</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ClassNotFoundException</span><span class="o">,</span> <span class="n">SQLException</span> <span class="o">{</span><span class="c1">// 带图书级别的构造器</span>
+  <span class="kd">public</span> <span class="nf">Book</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="n">String</span> <span class="n">head</span><span class="o">,</span> <span class="kt">int</span> <span class="n">bookRentLevel</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ClassNotFoundException</span><span class="o">,</span> <span class="n">SQLException</span> <span class="o">{</span><span class="c1">// 带图书级别的构造器</span>
     <span class="k">this</span><span class="o">.</span><span class="na">bookName</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
     <span class="k">this</span><span class="o">.</span><span class="na">bookRentLevel</span> <span class="o">=</span> <span class="n">bookRentLevel</span><span class="o">;</span>
     <span class="k">this</span><span class="o">.</span><span class="na">sequence</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Sequence</span><span class="o">(</span><span class="n">head</span><span class="o">);</span>
@@ -85,51 +84,53 @@
     <span class="n">connection</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
 <span class="c1">//    System.out.println(&quot;连接关闭！&quot;);</span>
     <span class="n">JOptionPane</span><span class="o">.</span><span class="na">showMessageDialog</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="s">&quot;添加成功！&quot;</span><span class="o">,</span> <span class="s">&quot;提示&quot;</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
-  <span class="o">}</span></p>
+  <span class="o">}</span>
 
-<p>  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getStatus</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getStatus</span><span class="o">()</span> <span class="o">{</span>
     <span class="k">return</span> <span class="n">status</span><span class="o">;</span>
-  <span class="o">}</span></p>
+  <span class="o">}</span>
 
-<p>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setStatus</span><span class="o">(</span><span class="kt">int</span> <span class="n">status</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setStatus</span><span class="o">(</span><span class="kt">int</span> <span class="n">status</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">this</span><span class="o">.</span><span class="na">status</span> <span class="o">=</span> <span class="n">status</span><span class="o">;</span>
-  <span class="o">}</span></p>
+  <span class="o">}</span>
 
-<p>  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getRentCounts</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getRentCounts</span><span class="o">()</span> <span class="o">{</span>
     <span class="k">return</span> <span class="n">rentCounts</span><span class="o">;</span>
-  <span class="o">}</span></p>
+  <span class="o">}</span>
 
-<p>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setRentCounts</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setRentCounts</span><span class="o">()</span> <span class="o">{</span>
     <span class="k">this</span><span class="o">.</span><span class="na">rentCounts</span><span class="o">++;</span>
-  <span class="o">}</span></p>
+  <span class="o">}</span>
 
-<p>  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getBookLevel</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getBookLevel</span><span class="o">()</span> <span class="o">{</span>
     <span class="k">return</span> <span class="n">bookRentLevel</span><span class="o">;</span>
-  <span class="o">}</span></p>
+  <span class="o">}</span>
 
-<p>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setBookLevel</span><span class="o">(</span><span class="kt">int</span> <span class="n">bookLevel</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setBookLevel</span><span class="o">(</span><span class="kt">int</span> <span class="n">bookLevel</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">this</span><span class="o">.</span><span class="na">bookRentLevel</span> <span class="o">=</span> <span class="n">bookLevel</span><span class="o">;</span>
-  <span class="o">}</span></p>
+  <span class="o">}</span>
 
-<p>  <span class="kd">public</span> <span class="n">String</span> <span class="nf">getId</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">getId</span><span class="o">()</span> <span class="o">{</span>
     <span class="k">return</span> <span class="n">Id</span><span class="o">;</span>
-  <span class="o">}</span></p>
+  <span class="o">}</span>
 
-<p>  <span class="kd">public</span> <span class="n">Record</span> <span class="nf">newRecord</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="n">Record</span> <span class="nf">newRecord</span><span class="o">()</span> <span class="o">{</span>
     <span class="k">return</span> <span class="k">new</span> <span class="n">Book</span><span class="o">.</span><span class="na">Record</span><span class="o">();</span>
-  <span class="o">}</span></p>
+  <span class="o">}</span>
 
-<p>  <span class="kd">public</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Record</span><span class="o">&gt;</span> <span class="nf">getRecord</span><span class="o">()</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Record</span><span class="o">&gt;</span> <span class="nf">getRecord</span><span class="o">()</span> <span class="o">{</span>
     <span class="k">return</span> <span class="n">record</span><span class="o">;</span>
-  <span class="o">}</span></p>
+  <span class="o">}</span>
 
-<p>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setRecord</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Record</span><span class="o">&gt;</span> <span class="n">record</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setRecord</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Record</span><span class="o">&gt;</span> <span class="n">record</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">this</span><span class="o">.</span><span class="na">record</span> <span class="o">=</span> <span class="n">record</span><span class="o">;</span>
-  <span class="o">}</span></p>
+  <span class="o">}</span>
 
-<p>  <span class="cm">/<em>*</span>
+
+  <span class="cm">/**</span>
 <span class="cm">   * 记录卡类 包括借出日期，归还日期，图书名字,扩展到借阅者名字</span>
-<span class="cm">   * </em>/</span>
+<span class="cm">   * */</span>
   <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Record</span> <span class="o">{</span>
     <span class="kd">private</span> <span class="kt">long</span> <span class="n">checkOutTime</span><span class="o">;</span>
     <span class="kd">private</span> <span class="kt">long</span> <span class="n">checkInTime</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
@@ -137,17 +138,15 @@
     <span class="kd">private</span> <span class="n">String</span> <span class="n">username</span><span class="o">;</span>
     <span class="kd">private</span> <span class="kt">double</span> <span class="n">totalfajin</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
     <span class="n">Date</span> <span class="n">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Date</span><span class="o">();</span>
-    <span class="n">SimpleDateFormat</span> <span class="n">timeformat</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">SimpleDateFormat</span><span class="o">(</span><span class="s">&quot;yyyy-MM-dd&quot;</span><span class="o">);</span><span class="c1">// 格式化时间输出</span></p>
-
-<pre><code>&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="nf"&gt;Record&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-  &lt;span class="k"&gt;try&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-    &lt;span class="n"&gt;Connection&lt;/span&gt; &lt;span class="n"&gt;connection&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
-        &lt;span class="n"&gt;DriverManager&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getConnection&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;jdbc:mysql://localhost/book_mgr?characterEncoding=utf8&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;root&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;121126&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
-</code></pre>
-
-<p><span class="c1">//        System.out.println(&quot;连接成功！&quot;);</span>
+    <span class="n">SimpleDateFormat</span> <span class="n">timeformat</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">SimpleDateFormat</span><span class="o">(</span><span class="s">&quot;yyyy-MM-dd&quot;</span><span class="o">);</span><span class="c1">// 格式化时间输出</span>
+    
+    <span class="kd">public</span> <span class="nf">Record</span><span class="o">()</span> <span class="o">{</span>
+      <span class="k">try</span> <span class="o">{</span>
+        <span class="n">Connection</span> <span class="n">connection</span> <span class="o">=</span>
+            <span class="n">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="s">&quot;jdbc:mysql://localhost/book_mgr?characterEncoding=utf8&quot;</span><span class="o">,</span> <span class="s">&quot;root&quot;</span><span class="o">,</span> <span class="s">&quot;121126&quot;</span><span class="o">);</span>
+<span class="c1">//        System.out.println(&quot;连接成功！&quot;);</span>
         <span class="n">Statement</span> <span class="n">statement</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
-        <span class="n">statement</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="s">&quot;insert record (booknumber,userid,checkout,checkin,plan,rent,fajin)value(&#39;&quot;</span><span class="o">+</span><span class="n">Id</span><span class="o">+</span><span class="s">&quot;&#39;,&#39;&quot;</span><span class="o">+</span><span class="n">username</span><span class="o">+</span><span class="s">&quot;&#39;,&#39;&quot;</span><span class="o">+</span><span class="n">timeformat</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">checkOutTime</span><span class="o">)+</span><span class="s">&quot;&#39;,&#39;&quot;</span><span class="o">+</span><span class="n">timeformat</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">checkInTime</span><span class="o">)+</span><span class="s">&quot;&#39;,&#39;&quot;</span><span class="o">+</span><span class="n">timeformat</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">checkInTime</span><span class="o">+</span><span class="mi">30</span><span class="o"><em></span><span class="mi">24</span><span class="o"></em></span><span class="mi">60</span><span class="o"><em></span><span class="mi">60</span><span class="o"></em></span><span class="mi">1000</span><span class="o">)+</span><span class="s">&quot;&#39;,&#39;&quot;</span><span class="o">+</span><span class="n">totalPrice</span><span class="o">+</span><span class="s">&quot;&#39;,&#39;&quot;</span><span class="o">+</span><span class="n">totalfajin</span><span class="o">+</span><span class="s">&quot;&#39;)&quot;</span><span class="o">);</span>    <br/>
+        <span class="n">statement</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="s">&quot;insert record (booknumber,userid,checkout,checkin,plan,rent,fajin)value(&#39;&quot;</span><span class="o">+</span><span class="n">Id</span><span class="o">+</span><span class="s">&quot;&#39;,&#39;&quot;</span><span class="o">+</span><span class="n">username</span><span class="o">+</span><span class="s">&quot;&#39;,&#39;&quot;</span><span class="o">+</span><span class="n">timeformat</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">checkOutTime</span><span class="o">)+</span><span class="s">&quot;&#39;,&#39;&quot;</span><span class="o">+</span><span class="n">timeformat</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">checkInTime</span><span class="o">)+</span><span class="s">&quot;&#39;,&#39;&quot;</span><span class="o">+</span><span class="n">timeformat</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">checkInTime</span><span class="o">+</span><span class="mi">30</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">1000</span><span class="o">)+</span><span class="s">&quot;&#39;,&#39;&quot;</span><span class="o">+</span><span class="n">totalPrice</span><span class="o">+</span><span class="s">&quot;&#39;,&#39;&quot;</span><span class="o">+</span><span class="n">totalfajin</span><span class="o">+</span><span class="s">&quot;&#39;)&quot;</span><span class="o">);</span>      
         <span class="n">connection</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
 <span class="c1">//        System.out.println(&quot;连接关闭！&quot;);</span>
       <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">SQLException</span> <span class="n">e1</span><span class="o">)</span> <span class="o">{</span>
@@ -158,65 +157,65 @@
       <span class="k">this</span><span class="o">.</span><span class="na">checkInTime</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
       <span class="k">this</span><span class="o">.</span><span class="na">totalPrice</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
       <span class="c1">// this.username=username;</span>
-    <span class="o">}</span></p>
+    <span class="o">}</span>
 
-<pre><code>&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;getUsername&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;username&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getUsername</span><span class="o">()</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">username</span><span class="o">;</span>
+    <span class="o">}</span>
 
-&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;setCheckOutTime&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="n"&gt;checkOutTime&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-  &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;checkOutTime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;checkOutTime&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setCheckOutTime</span><span class="o">(</span><span class="kt">long</span> <span class="n">checkOutTime</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">checkOutTime</span> <span class="o">=</span> <span class="n">checkOutTime</span><span class="o">;</span>
+    <span class="o">}</span>
 
-&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;getCheckOutTime&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;timeformat&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;format&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;checkOutTime&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getCheckOutTime</span><span class="o">()</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">timeformat</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">checkOutTime</span><span class="o">);</span>
+    <span class="o">}</span>
 
-&lt;span class="c1"&gt;// public long getCheckInTime() {&lt;/span&gt;
-&lt;span class="c1"&gt;// return checkInTime;&lt;/span&gt;
-&lt;span class="c1"&gt;// }&lt;/span&gt;
-&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;getCheckInTime&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;checkInTime&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;该图书未归还&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-  &lt;span class="k"&gt;else&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;timeformat&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;format&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;checkInTime&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
+    <span class="c1">// public long getCheckInTime() {</span>
+    <span class="c1">// return checkInTime;</span>
+    <span class="c1">// }</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getCheckInTime</span><span class="o">()</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">checkInTime</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+        <span class="k">return</span> <span class="s">&quot;该图书未归还&quot;</span><span class="o">;</span>
+      <span class="k">else</span>
+        <span class="k">return</span> <span class="n">timeformat</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">checkInTime</span><span class="o">);</span>
+    <span class="o">}</span>
 
-&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;getTotalPrice&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;totalPrice&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getTotalPrice</span><span class="o">()</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="s">&quot;&quot;</span> <span class="o">+</span> <span class="n">totalPrice</span><span class="o">;</span>
+    <span class="o">}</span>
 
-&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;setCheckInTime&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="n"&gt;checkInTime&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-  &lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;checkInTime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;checkInTime&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setCheckInTime</span><span class="o">(</span><span class="kt">long</span> <span class="n">checkInTime</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">checkInTime</span> <span class="o">=</span> <span class="n">checkInTime</span><span class="o">;</span>
+    <span class="o">}</span>
 
 
-&lt;span class="nd"&gt;@Override&lt;/span&gt;
-&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="n"&gt;String&lt;/span&gt; &lt;span class="nf"&gt;toString&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span>
 
-  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;借出日期&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;timeformat&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;format&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;checkOutTime&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot; 归还日期：&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;timeformat&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;format&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;checkInTime&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
-      &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s"&gt;&amp;quot; 本次费用：&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;totalPrice&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
+      <span class="k">return</span> <span class="s">&quot;借出日期&quot;</span> <span class="o">+</span> <span class="n">timeformat</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">checkOutTime</span><span class="o">)</span> <span class="o">+</span> <span class="s">&quot; 归还日期：&quot;</span> <span class="o">+</span> <span class="n">timeformat</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">checkInTime</span><span class="o">)</span>
+          <span class="o">+</span> <span class="s">&quot; 本次费用：&quot;</span> <span class="o">+</span> <span class="n">totalPrice</span><span class="o">;</span>
+    <span class="o">}</span>
 
-&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="nf"&gt;rentFee&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="n"&gt;checkInTime&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;rentPrice&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;&lt;span class="c1"&gt;// 根据日期计算费用&lt;/span&gt;
-  &lt;span class="n"&gt;totalPrice&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;((&lt;/span&gt;&lt;span class="n"&gt;checkInTime&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;checkOutTime&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;24&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;60&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;60&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;rentPrice&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="c1"&gt;// 測試方便&lt;/span&gt;
-                                                                                      &lt;span class="c1"&gt;// 先加一&lt;/span&gt;
-  &lt;span class="c1"&gt;// System.out.println(&amp;quot;总共借阅天数： &amp;quot;+((checkInTime-checkOutTime)/(24*60*60*1000)+1));&lt;/span&gt;
-  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;totalPrice&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">rentFee</span><span class="o">(</span><span class="kt">long</span> <span class="n">checkInTime</span><span class="o">,</span> <span class="kt">double</span> <span class="n">rentPrice</span><span class="o">)</span> <span class="o">{</span><span class="c1">// 根据日期计算费用</span>
+      <span class="n">totalPrice</span> <span class="o">=</span> <span class="o">((</span><span class="n">checkInTime</span> <span class="o">-</span> <span class="n">checkOutTime</span><span class="o">)</span> <span class="o">/</span> <span class="o">(</span><span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">*</span> <span class="n">rentPrice</span><span class="o">;</span><span class="c1">// 測試方便</span>
+                                                                                          <span class="c1">// 先加一</span>
+      <span class="c1">// System.out.println(&quot;总共借阅天数： &quot;+((checkInTime-checkOutTime)/(24*60*60*1000)+1));</span>
+      <span class="k">return</span> <span class="n">totalPrice</span><span class="o">;</span>
+    <span class="o">}</span>
 
-&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="nf"&gt;fajin&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="n"&gt;checkInTime&lt;/span&gt;&lt;span class="o"&gt;,&lt;/span&gt; &lt;span class="kt"&gt;double&lt;/span&gt; &lt;span class="n"&gt;fajinfee&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">fajin</span><span class="o">(</span><span class="kt">long</span> <span class="n">checkInTime</span><span class="o">,</span> <span class="kt">double</span> <span class="n">fajinfee</span><span class="o">)</span> <span class="o">{</span>
+      
+      <span class="k">if</span> <span class="o">(((</span><span class="n">checkInTime</span> <span class="o">-</span> <span class="n">checkOutTime</span><span class="o">)</span> <span class="o">/</span> <span class="o">(</span><span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span><span class="o">))</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">totalfajin</span> <span class="o">=</span> <span class="o">((</span><span class="n">checkInTime</span> <span class="o">-</span> <span class="n">checkOutTime</span><span class="o">)</span> <span class="o">/</span> <span class="o">(</span><span class="mi">24</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">1000</span><span class="o">)</span> <span class="o">-</span> <span class="mi">30</span><span class="o">)</span> <span class="o">*</span> <span class="mi">2</span><span class="o">;</span><span class="c1">// 默认罚金为2元一天，后期可以设置</span>
+        <span class="k">return</span> <span class="n">totalfajin</span><span class="o">;</span>
+      <span class="o">}</span>
+      <span class="k">return</span> <span class="n">totalfajin</span><span class="o">;</span>
+    <span class="o">}</span>
+   
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
 
-  &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;(((&lt;/span&gt;&lt;span class="n"&gt;checkInTime&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;checkOutTime&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;24&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;60&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;60&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="o"&gt;))&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-    &lt;span class="n"&gt;totalfajin&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;((&lt;/span&gt;&lt;span class="n"&gt;checkInTime&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="n"&gt;checkOutTime&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;24&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;60&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;60&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;1000&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;30&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;&lt;span class="c1"&gt;// 默认罚金为2元一天，后期可以设置&lt;/span&gt;
-    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;totalfajin&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-  &lt;span class="o"&gt;}&lt;/span&gt;
-  &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;totalfajin&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-&lt;span class="o"&gt;}&lt;/span&gt;
-</code></pre>
-
-<p>  <span class="o">}</span>
-<span class="o">}</span></code></pre></figure></p>
 
 </section>
 <section class="meta">
