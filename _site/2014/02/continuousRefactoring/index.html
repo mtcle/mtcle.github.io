@@ -33,18 +33,20 @@
         <hr>
         <article class="/content">
         <section class="post">
-<h4 id="section">代码的持续重构</h4>
+<p>##代码的持续重构##</p>
+
 <hr />
 
 <p>代码之美在于不停的重构，不能满足于代码的现状，不能为了实现某个功能而编码，更好的是不停的追逐代码之最。</p>
 
 <hr />
-<p>最近呢，图书管理系统也算是完成了，怎么说是算完成呢？因为也就是把基本的业务逻辑完成了，符合了用<br />
-户需求，但是这远远还不算完成。毕竟还有好多业务的实现分离以及更加有利于扩展的代码抽象等等的都还<br />
-错的远呢。还有好多具体的小细节还没有实现。缺乏用户友好性，今天呢为系统添加了代码的国际化，以及<br />
-记录用户数据信息等功能。这些是代码的功能的完善和用户友好度的增加。<br />
-同时呢，也为了代码的后期扩展增加了可行性。派生出了一个baseJframe抽象类，该类继承了JFrame，其含有<br />
-的方法有一个记忆用户图形界面操作后的数据，同时还含有一个国际化的获得菜单String的方法。供其他类继承<br />
+
+<p>最近呢，图书管理系统也算是完成了，怎么说是算完成呢？因为也就是把基本的业务逻辑完成了，符合了用  <br />
+户需求，但是这远远还不算完成。毕竟还有好多业务的实现分离以及更加有利于扩展的代码抽象等等的都还  <br />
+错的远呢。还有好多具体的小细节还没有实现。缺乏用户友好性，今天呢为系统添加了代码的国际化，以及  <br />
+记录用户数据信息等功能。这些是代码的功能的完善和用户友好度的增加。  <br />
+同时呢，也为了代码的后期扩展增加了可行性。派生出了一个baseJframe抽象类，该类继承了JFrame，其含有  <br />
+的方法有一个记忆用户图形界面操作后的数据，同时还含有一个国际化的获得菜单String的方法。供其他类继承  <br />
 使用。感觉挺好用的。 代码如下：</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">base</span><span class="o">;</span>
@@ -167,10 +169,10 @@
 
 <hr />
 
-<p>同时要在ssr下面建立国际化语言文件。例如：<br />
-<code>BookMgr_en.properties</code>英文文件<br />
-<code>BookMgr_zh_CN.properties</code>简体中文<br />
-这些名字不是随意起的，<code>_</code>前面的是程序名字，后面的是固定的</p>
+<p>同时要在ssr下面建立国际化语言文件。例如：  <br />
+<code class="highlighter-rouge">BookMgr_en.properties</code>英文文件  <br />
+<code class="highlighter-rouge">BookMgr_zh_CN.properties</code>简体中文  <br />
+这些名字不是随意起的，<code class="highlighter-rouge">_</code>前面的是程序名字，后面的是固定的</p>
 
 </section>
 <section class="meta">
