@@ -33,20 +33,17 @@
         <hr>
         <article class="/content">
         <section class="post">
-<h3 id="sqlsever">以前学习过sqlsever，对于一些基本查询及联合查询基本了解，这里记录下</h3>
-<p>###  最近使用jdbc连接mysql的一些注意事项也能让我以后再次使用mysql时可以回过头来查阅。</p>
+<h3 id="sqlsever--jdbcmysqlmysql">以前学习过sqlsever，对于一些基本查询及联合查询基本了解，这里记录下  最近使用jdbc连接mysql的一些注意事项也能让我以后再次使用mysql时可以回过头来查阅。</h3>
 
-<hr />
-
-<h4 id="classfornamecommysqljdbcdriver">1.加载驱动：  <code class="highlighter-rouge">Class.forName("com.mysql.jdbc.Driver");</code></h4>
-<p>####  2.建立连接：  <code class="highlighter-rouge">Connection connection =DriverManager.getConnection   
-####  ("jdbc:mysql://localhost/book_mgr?characterEncoding=utf8","root", "password");//这个要在数据库后面   
-####   写上查询字符集，否在查询不到数据库的中文结果。</code><br />
-####  3.调用Statement：  <code class="highlighter-rouge">Statement statement = connection.createStatement()</code>。  <br />
-####  4.取结果集：  <code class="highlighter-rouge">ResultSet getresault=statement.executeQuery("查询语句")</code>。  <br />
-####  5.对结果集进行处理：使用 <code class="highlighter-rouge">while (getResault.next()) {passtemp = getresault.getString(1);}//数字对应着结果的列编号</code>  <br />
-####  6.连接关闭：  <code class="highlighter-rouge">connection.close();</code>  <br />
-####  7.若进行多条语句操作则必须添加事务处理。要在命令开始前设置成commit为false，对执行多条语句后进行commit,若异常后进行rollback，在finally里进行连接终端操作。</p>
+<ol>
+  <li>加载驱动：  <code class="highlighter-rouge">Class.forName("com.mysql.jdbc.Driver");</code></li>
+  <li>建立连接：  <code class="highlighter-rouge">Connection connection =DriverManager.getConnection     ("jdbc:mysql://localhost/book_mgr?characterEncoding=utf8","root", "password");//这个要在数据库后面写上查询字符集，否在查询不到数据库的中文结果。</code></li>
+  <li>调用Statement：  <code class="highlighter-rouge">Statement statement = connection.createStatement()</code>。</li>
+  <li>取结果集：  <code class="highlighter-rouge">ResultSet getresault=statement.executeQuery("查询语句")</code>。</li>
+  <li>对结果集进行处理：使用 <code class="highlighter-rouge">while (getResault.next()) {passtemp = getresault.getString(1);}//数字对应着结果的列编号</code></li>
+  <li>连接关闭：  <code class="highlighter-rouge">connection.close();</code></li>
+  <li>若进行多条语句操作则必须添加事务处理。要在命令开始前设置成commit为false，对执行多条语句后进行commit,若异常后进行rollback，在finally里进行连接终端操作。</li>
+</ol>
 
 </section>
 <section class="meta">
