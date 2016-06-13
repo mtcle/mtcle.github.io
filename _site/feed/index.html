@@ -7,8 +7,43 @@
     <title>mtcle</title>
     <link href="http://www.mtcle.ml/feed/" rel="self" />
     <link href="http://www.mtcle.net/" />
-    <lastBuildDate>2015-12-22T16:16:27+08:00</lastBuildDate>
+    <lastBuildDate>2016-06-13T09:58:29+08:00</lastBuildDate>
     <webMaster>mtcle@126.com</webMaster>
+    
+    <item>
+      <title>回顾2015年</title>
+      <link href="http://www.mtcle.ml/2015/12/summary2015/"/>
+      <pubDate>2015-12-22T00:00:00+08:00</pubDate>
+      <author>mtcle</author>
+      <guid>http://www.mtcle.ml/2015/12/summary2015</guid>
+      <content:encoded><![CDATA[<h4 id="oa">今天看到oa通知让进行年度工作述职报告</h4>
+<hr />
+<p>打开oa看到提示让进行述职报告了，猛地才发现进入新的公司已经一年  <br />
+多了，不紧感慨万千呀。忙碌的15年做的最多的莫过于NFC了，基本天  <br />
+天接触的nfc。也做了几款企业级应用。最近的apple pay和银联合作，  <br />
+可能会给nfc市场注入一定的新鲜活力，真希望apple能够早日将其的nfc功  <br />
+能API开放出来，只有开放，生态系统才会更加稳定，一味的故步自封，封闭在自己的生态系统里面很难玩转的。  <br />
+毕竟nfc不仅仅是移动端了，需要涉及pos端，希望别人的pos能够刷你的  <br />
+终端，那么必须就要遵循相应的行业标准。谁也不希望一个商家收银台上  <br />
+摆数个pos，这个支持支付宝，那个支持银联，另外的支持apple pay等。大家都想当标准，可是谁也不想鸟谁，这就是现状。  <br />
+当初apple pay说好的三分天下呢，现在的状况未免也太凄惨了。</p>
+
+<hr />
+<p>做为一个纯粹的技术人员，真的迫切希望apple能够把其nfc模块的api开放出来，只有开放才能迎来生机。</p>
+
+<hr />
+
+<h3 id="section">收获：</h3>
+
+<ul>
+  <li>15年呢考了个证书，也算是自己的一个充电吧</li>
+  <li>生活上呢也跨了里程碑的一步</li>
+  <li>学习了php这个富有争议的“最好”的语言</li>
+  <li>iOS呢也做了点简单的东西，毕竟没有做成型的产品，还是懒啊</li>
+</ul>
+
+]]></content:encoded>
+    </item>
     
     <item>
       <title>titanium跨平台开发之路</title>
@@ -514,60 +549,6 @@ the first one，又干了败人品的事儿了，隔了好久了烂记性吞吞�
 丈夫说碰到西瓜了~</p>
 
 <hr />
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>自己写的丑陋代码高亮</title>
-      <link href="http://www.mtcle.ml/2014/01/highlight/"/>
-      <pubDate>2014-01-16T00:00:00+08:00</pubDate>
-      <author>mtcle</author>
-      <guid>http://www.mtcle.ml/2014/01/highlight</guid>
-      <content:encoded><![CDATA[<p>###最近折腾这个markdown的高亮,忽然想起来以前我们的一个小小作业,和高亮有关,觉得挺好玩的就拿出来折腾折腾.</p>
-
-<p><strong>要求</strong> :java的高亮转变成html文件后里面依旧高亮   <br />
-思路:</p>
-
-<ul>
-  <li>关键字搜索匹配高亮</li>
-  <li>注释搜索匹配</li>
-  <li>html特殊符号处理</li>
-  <li>注释中的关键词处理</li>
-</ul>
-
-<hr />
-<p>效果如下:  <br />
-java里面:(由于blog用的js代码高亮不是太完美)</p>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java">  
-
-<span class="kn">package</span> <span class="n">work1</span><span class="o">;</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Messageprint</span> <span class="o">{</span>
-  <span class="c1">// 测试的文档test</span>
-  <span class="cm">/**</span>
-<span class="cm">   * ghghghgh</span>
-<span class="cm">   * </span>
-<span class="cm">   * @mtcle the first javawork</span>
-<span class="cm">   */</span>
-  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Welcome\&quot;&lt;html&gt;&lt;/html&gt; to Java&quot;</span><span class="o">);</span><span class="c1">// 这里是注释</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Welcome to computer Science&quot;</span><span class="o">);</span><span class="c1">// 也是注释</span>
-    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Programming is fun&quot;</span><span class="o">);</span><span class="c1">// 还是注释</span>
-  <span class="o">}</span>
-<span class="o">}</span>  
- </code></pre></figure>
-
-<hr />
-<p>html效果如下:    <br />
-这里好像是markdown对于大段html的支持不是太完美(个人感觉),段注释在html页面运行正常,放到markdown里就不行了主要是 * 的特殊含义吧  原<a href="/source/javaToHtml.html">html格式</a></p>
-<html><pre><font color="blue">**package**</font> work1;  <p><font color="blue">**public**</font> <font color="blue">**class**</font> Messageprint {  <p>  <font color="green">// 测试的文档test </font> <p>   <font color="orange">/**  </font> <p>    <font color="orange">*  ghghghgh </font> <p>    <font color="orange">*   </font> <p>    <font color="orange">*  @mtcle the first javawork </font> <p>    <font color="orange">*/</font>   <p>  <font color="blue">**public**</font> <font color="blue">**static**</font> <font color="blue">**void**</font> main(String[] args) {  <p>    System.<font color="blue">**out**</font>.println( <font color="blue">" Welcome \" &amp;lthtml&amp;gt&amp;lt/html&amp;gt to Java "</font> );<font color="green">// 这里是注释 </font> <p>    System.<font color="blue">**out**</font>.println( <font color="blue">" Welcome to computer Science "</font> );<font color="green">// 也是注释 </font> <p>    System.<font color="blue">**out**</font>.println( <font color="blue">" Programming is fun "</font> );<font color="green">// 还是注释 </font> <p>  }  <p>}  <p>  
-
-
-
--------
-
-
-</p></p></p></p></p></p></p></p></p></p></p></p></p></p></pre></html>
 ]]></content:encoded>
     </item>
     
