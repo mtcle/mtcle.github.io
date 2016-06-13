@@ -33,7 +33,8 @@
         <hr>
         <article class="/content">
         <section class="post">
-<h2 id="section">####异步加载,多线程</h2>
+<h3 id="section">异步加载,多线程</h3>
+<hr />
 <p>因为手机的性能和网络资源的特征,多线程和异步加载在android开发中相当重要,运用无处不在.  <br />
 这里就稍微总结一下自己运用Thread开辟新线程的例子.为自己mark~  <br />
 ***</p>
@@ -91,8 +92,57 @@
 
 <p>这个代码里面注意的:</p>
 
-<p>新的线程里面的操作要在run()方法里面写.  <br />
-***</p>
+<p>新的线程里面的操作要在<code class="highlighter-rouge">run()</code>方法里面写.</p>
+
+<hr />
+<p>#asynctask#<br />
+这个是个小小的异步操作的例子就是将耗时操作在另外开辟的线程中进行:</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">//传入三个Void对象,为空对象</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FirstAsyncTask</span> <span class="kd">extends</span> <span class="n">AsyncTask</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">,</span> <span class="n">Void</span><span class="o">,</span> <span class="n">Void</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="n">Void</span> <span class="nf">doInBackground</span><span class="o">(</span><span class="n">Void</span><span class="o">...</span> <span class="n">params</span><span class="o">)</span> <span class="o">{</span><span class="c1">//该方法是在新线程里面做的事情,不会阻塞原来的线程里的事情</span>
+        <span class="n">NetOperator</span> <span class="n">netOperator</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">NetOperator</span><span class="o">();</span>
+        <span class="n">netOperator</span><span class="o">.</span><span class="na">operator</span><span class="o">();</span><span class="c1">//耗时操作,这里进行耗时例如访问网络,加载图片,下载等</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>  
+  </code></pre></figure>
+
+<p>也就是在调用耗时操作是可以新开辟一个AsyncTask,在其中进行.  <br />
+对于Async对象有几个复写对象:分别为<code class="highlighter-rouge">onPreExecute()</code>,<code class="highlighter-rouge">doInbackground()</code>,<code class="highlighter-rouge">onPostExecute()</code>,这三个方法  <br />
+对应着一个异步操作的创建,运行和销毁.下面用我写的一个例子实际看一下:</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">  
+
+   <span class="c1">//进行异步操作之前的ui准备工作</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPreExecute</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">textView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&quot;开始执行异步操作~&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+       
+     <span class="c1">//该方法不运行在ui线程中,该方法不能设置ui相关的东西,可以进行后台耗时操作等,不能和UI进行交互</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="n">String</span> <span class="nf">doInBackground</span><span class="o">(</span><span class="n">Integer</span><span class="o">...</span> <span class="n">params</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">NetOperator</span> <span class="n">netOperator</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">NetOperator</span><span class="o">();</span>
+    <span class="o">}</span>
+         <span class="c1">//最后执行,是在ui中执行的</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPostExecute</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">textView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&quot;异步执行结束了,调用了onPostExecute方法&quot;</span> <span class="o">+</span> <span class="n">s</span><span class="o">);</span>
+
+    <span class="o">}</span>  
+    </code></pre></figure>
+
+<p>总结一下一个异步操作的运行过程:</p>
+
+<ul>
+  <li>生成该类的对象,并调用<code class="highlighter-rouge">execute</code>方法</li>
+  <li>首先执行<code class="highlighter-rouge">onPreExecute</code>,处理后台任务启动前的UI工作</li>
+  <li>其次执行<code class="highlighter-rouge">doInBackgrount</code>方法</li>
+  <li>最后执行 <code class="highlighter-rouge">onPostExecute</code>方法,和UI进行交互,返回UI结果</li>
+  <li>每次使用对象的时候必须<code class="highlighter-rouge">new</code>，不能直接引用对象调用它的<code class="highlighter-rouge">execute</code>方法</li>
+</ul>
 
 
 </section>
@@ -148,7 +198,7 @@ $(function(){
     var url = false;
         if (e.which == 37 || e.which == 74) {  // Left arrow and J
             
-        url = 'http://www.mtcle.ml/2014/03/androidlearning/';
+        url = 'http://www.mtcle.ml/2014/02/continuousRefactoring/';
         
         }
         else if (e.which == 39 || e.which == 75) {  // Right arrow and K

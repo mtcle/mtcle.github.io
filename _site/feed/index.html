@@ -7,7 +7,7 @@
     <title>mtcle</title>
     <link href="http://www.mtcle.ml/feed/" rel="self" />
     <link href="http://www.mtcle.net/" />
-    <lastBuildDate>2016-06-13T09:58:29+08:00</lastBuildDate>
+    <lastBuildDate>2016-06-13T10:29:15+08:00</lastBuildDate>
     <webMaster>mtcle@126.com</webMaster>
     
     <item>
@@ -76,7 +76,8 @@
       <pubDate>2014-04-16T00:00:00+08:00</pubDate>
       <author>mtcle</author>
       <guid>http://www.mtcle.ml/2014/04/mtcle</guid>
-      <content:encoded><![CDATA[<h2 id="titanium">###titanium的跨平台开发</h2>
+      <content:encoded><![CDATA[<h3 id="titanium">titanium的跨平台开发</h3>
+<hr />
 <p>最近的一个项目是一个跨平台的项目,选择了用js开发,从开始到现在,完全是自己摸索,最开始满满的还以   <br />
 为javascript和java还有点关系呢(以前没接触过),用了才知道没半毛钱关系,整体来讲,js语言毕竟属于  <br />
 轻量级的,语言规范上比较松,语法上也比较好上手,以前接触过vbs,都属于脚本语言嘛~呵呵了    <br />
@@ -100,11 +101,11 @@ module了,由于titanium不支持android alarm,所以开始写module,由于刚�
       <pubDate>2014-04-15T00:00:00+08:00</pubDate>
       <author>mtcle</author>
       <guid>http://www.mtcle.ml/2014/04/vi</guid>
-      <content:encoded><![CDATA[<hr />
-<p>##vi简单的一些用法<br />
-—<br />
-####以前总是比较排斥vi,但是用多了ubuntu总是免不了使用它,就花费一点时间把常用的命令都试了一遍       <br />
-感觉还行吧,好记性不如烂笔头(况且也不是好记性)就写一下,忘了回来查查</p>
+      <content:encoded><![CDATA[<h2 id="vi">vi简单的一些用法</h2>
+
+<h4 id="viubuntu">以前总是比较排斥vi,但是用多了ubuntu总是免不了使用它,就花费一点时间把常用的命令都试了一遍</h4>
+
+<p>感觉还行吧,好记性不如烂笔头(况且也不是好记性)就写一下,忘了回来查查</p>
 
 <ul>
   <li>:wq退出保存，若是新文件后面跟一个文件名;:q!退出不保存了;:x和wq相同;</li>
@@ -128,7 +129,8 @@ module了,由于titanium不支持android alarm,所以开始写module,由于刚�
       <pubDate>2014-03-17T00:00:00+08:00</pubDate>
       <author>mtcle</author>
       <guid>http://www.mtcle.ml/2014/03/threadlearning</guid>
-      <content:encoded><![CDATA[<h2 id="section">####异步加载,多线程</h2>
+      <content:encoded><![CDATA[<h3 id="section">异步加载,多线程</h3>
+<hr />
 <p>因为手机的性能和网络资源的特征,多线程和异步加载在android开发中相当重要,运用无处不在.  <br />
 这里就稍微总结一下自己运用Thread开辟新线程的例子.为自己mark~  <br />
 ***</p>
@@ -186,30 +188,11 @@ module了,由于titanium不支持android alarm,所以开始写module,由于刚�
 
 <p>这个代码里面注意的:</p>
 
-<p>新的线程里面的操作要在run()方法里面写.  <br />
-***</p>
+<p>新的线程里面的操作要在<code class="highlighter-rouge">run()</code>方法里面写.</p>
 
-]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>浅显的理解Async异步操作</title>
-      <link href="http://www.mtcle.ml/2014/03/androidlearning/"/>
-      <pubDate>2014-03-17T00:00:00+08:00</pubDate>
-      <author>mtcle</author>
-      <guid>http://www.mtcle.ml/2014/03/androidlearning</guid>
-      <content:encoded><![CDATA[<p>###Learning of Async <br />
-####异步操作<br />
-***<br />
-Android学习了一个多月,由于也有一定的java基础,java里面的好多方法基本都通用,也在于安卓   <br />
-整体入门不是太难,所以基本也掌握了基础的安卓功能的用法.    <br />
-由于移动设备的资源局限性,对于处理安卓和java还是有很多区别的.对于对象的new还有变量的作用域  <br />
-也格外需要处理.  <br />
-最近学习了多线程,有几种处理多线程的方法(主要是为了解决UI阻塞的问题)也看了,感觉也是似懂非懂的  <br />
-接受新鲜事务总是这样的,需要个时间.只要多用慢慢就理解其具体的用法和特征了.就像我们谁也没过多  <br />
-的学习汉语的语法不也是照样运用的很灵活么.都是一个道理.</p>
-
-<p>这个是个小小的异步操作的例子就是将耗时操作在另外开辟的线程中进行:</p>
+<hr />
+<p>#asynctask#<br />
+这个是个小小的异步操作的例子就是将耗时操作在另外开辟的线程中进行:</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">//传入三个Void对象,为空对象</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">FirstAsyncTask</span> <span class="kd">extends</span> <span class="n">AsyncTask</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">,</span> <span class="n">Void</span><span class="o">,</span> <span class="n">Void</span><span class="o">&gt;</span> <span class="o">{</span>
@@ -223,7 +206,7 @@ Android学习了一个多月,由于也有一定的java基础,java里面的好多
   </code></pre></figure>
 
 <p>也就是在调用耗时操作是可以新开辟一个AsyncTask,在其中进行.  <br />
-对于Async对象有几个复写对象:分别为onPreExecute(),doInbackground(),onPostExecute(),这三个方法  <br />
+对于Async对象有几个复写对象:分别为<code class="highlighter-rouge">onPreExecute()</code>,<code class="highlighter-rouge">doInbackground()</code>,<code class="highlighter-rouge">onPostExecute()</code>,这三个方法  <br />
 对应着一个异步操作的创建,运行和销毁.下面用我写的一个例子实际看一下:</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java">  
@@ -250,12 +233,11 @@ Android学习了一个多月,由于也有一定的java基础,java里面的好多
 <p>总结一下一个异步操作的运行过程:</p>
 
 <ul>
-  <li>生成该类的对象,并调用execute方法</li>
-  <li>首先执行onPreExecute,处理后台任务启动前的UI工作</li>
-  <li>其次执行doInBackgrount方法</li>
-  <li>最后执行 onPostExecute方法,和UI进行交互,返回UI结果  <br />
-<em>**<br />
-**</em></li>
+  <li>生成该类的对象,并调用<code class="highlighter-rouge">execute</code>方法</li>
+  <li>首先执行<code class="highlighter-rouge">onPreExecute</code>,处理后台任务启动前的UI工作</li>
+  <li>其次执行<code class="highlighter-rouge">doInBackgrount</code>方法</li>
+  <li>最后执行 <code class="highlighter-rouge">onPostExecute</code>方法,和UI进行交互,返回UI结果</li>
+  <li>每次使用对象的时候必须<code class="highlighter-rouge">new</code>，不能直接引用对象调用它的<code class="highlighter-rouge">execute</code>方法</li>
 </ul>
 
 ]]></content:encoded>
@@ -267,7 +249,7 @@ Android学习了一个多月,由于也有一定的java基础,java里面的好多
       <pubDate>2014-02-21T00:00:00+08:00</pubDate>
       <author>mtcle</author>
       <guid>http://www.mtcle.ml/2014/02/continuousRefactoring</guid>
-      <content:encoded><![CDATA[<p>##代码的持续重构##</p>
+      <content:encoded><![CDATA[<h2 id="section">代码的持续重构</h2>
 
 <hr />
 
@@ -479,8 +461,9 @@ java接口那部分一直是基础学习阶段掌握不牢固的部分，看看�
       <pubDate>2014-02-18T00:00:00+08:00</pubDate>
       <author>mtcle</author>
       <guid>http://www.mtcle.ml/2014/02/backandthinking</guid>
-      <content:encoded><![CDATA[<h2 id="section">###一切又都开始了</h2>
-<p>今天是回到洛阳的第一天，天气比着家里那边还是不错的，起码不再下雪了。  <br />
+      <content:encoded><![CDATA[<h3 id="section">一切又都开始了</h3>
+<hr />
+<p>今天是回到工作地方的第一天，天气比着家里那边还是不错的，起码不再下雪了。  <br />
 由于好多同学都在学校选课题，课程没法进行下去了，上午就对去年做的那个图书管理系统进行答辩了  <br />
 the first one，又干了败人品的事儿了，隔了好久了烂记性吞吞吐吐的巴拉巴拉了点儿，稀里糊涂  <br />
 讲完了。当然中间老师指出了许多问题（由于老师是大牛所以各种问题嘛），自己反思一下，未讲的时  <br />
@@ -514,7 +497,8 @@ the first one，又干了败人品的事儿了，隔了好久了烂记性吞吞�
       <pubDate>2014-01-18T00:00:00+08:00</pubDate>
       <author>mtcle</author>
       <guid>http://www.mtcle.ml/2014/01/the_fornight_of_back_home</guid>
-      <content:encoded><![CDATA[<h2 id="section">####酷爱折腾</h2>
+      <content:encoded><![CDATA[<h4 id="section">酷爱折腾</h4>
+<hr />
 <p>最近没少折腾.最大的成就就是把这个个人小主页搞起来了,当然了,期间看网上说的在github上搭建blog不道德了什么的之类的  <br />
 也十分理解(毕竟这是一个托管代码的平台不是让人免费搭博客的地方),个人观点呢,这是一个尝试新鲜事物的过程.  <br />
 从这个过程中学到应有的知识还是很有收获的(再者说我们托管的这个blog不也是个小小项目么,这也是符合github的宗旨的吧(自圆其说下)).  <br />
@@ -549,6 +533,60 @@ the first one，又干了败人品的事儿了，隔了好久了烂记性吞吞�
 丈夫说碰到西瓜了~</p>
 
 <hr />
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>自己写的丑陋代码高亮</title>
+      <link href="http://www.mtcle.ml/2014/01/highlight/"/>
+      <pubDate>2014-01-16T00:00:00+08:00</pubDate>
+      <author>mtcle</author>
+      <guid>http://www.mtcle.ml/2014/01/highlight</guid>
+      <content:encoded><![CDATA[<h3 id="markdown">最近折腾这个markdown的高亮,忽然想起来以前我们的一个小小作业,和高亮有关,觉得挺好玩的就拿出来折腾折腾.</h3>
+
+<p><strong>要求</strong> :java的高亮转变成html文件后里面依旧高亮   <br />
+思路:</p>
+
+<ul>
+  <li>关键字搜索匹配高亮</li>
+  <li>注释搜索匹配</li>
+  <li>html特殊符号处理</li>
+  <li>注释中的关键词处理</li>
+</ul>
+
+<hr />
+<p>效果如下:  <br />
+java里面:(由于blog用的js代码高亮不是太完美)</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">  
+
+<span class="kn">package</span> <span class="n">work1</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Messageprint</span> <span class="o">{</span>
+  <span class="c1">// 测试的文档test</span>
+  <span class="cm">/**</span>
+<span class="cm">   * ghghghgh</span>
+<span class="cm">   * </span>
+<span class="cm">   * @mtcle the first javawork</span>
+<span class="cm">   */</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Welcome\&quot;&lt;html&gt;&lt;/html&gt; to Java&quot;</span><span class="o">);</span><span class="c1">// 这里是注释</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Welcome to computer Science&quot;</span><span class="o">);</span><span class="c1">// 也是注释</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Programming is fun&quot;</span><span class="o">);</span><span class="c1">// 还是注释</span>
+  <span class="o">}</span>
+<span class="o">}</span>  
+ </code></pre></figure>
+
+<hr />
+<p>html效果如下:    <br />
+这里好像是markdown对于大段html的支持不是太完美(个人感觉),段注释在html页面运行正常,放到markdown里就不行了主要是 * 的特殊含义吧  原<a href="/source/javaToHtml.html">html格式</a></p>
+<html><pre><font color="blue">**package**</font> work1;  <p><font color="blue">**public**</font> <font color="blue">**class**</font> Messageprint {  <p>  <font color="green">// 测试的文档test </font> <p>   <font color="orange">/**  </font> <p>    <font color="orange">*  ghghghgh </font> <p>    <font color="orange">*   </font> <p>    <font color="orange">*  @mtcle the first javawork </font> <p>    <font color="orange">*/</font>   <p>  <font color="blue">**public**</font> <font color="blue">**static**</font> <font color="blue">**void**</font> main(String[] args) {  <p>    System.<font color="blue">**out**</font>.println( <font color="blue">" Welcome \" &amp;lthtml&amp;gt&amp;lt/html&amp;gt to Java "</font> );<font color="green">// 这里是注释 </font> <p>    System.<font color="blue">**out**</font>.println( <font color="blue">" Welcome to computer Science "</font> );<font color="green">// 也是注释 </font> <p>    System.<font color="blue">**out**</font>.println( <font color="blue">" Programming is fun "</font> );<font color="green">// 还是注释 </font> <p>  }  <p>}  <p>  
+
+
+
+-------
+
+
+</p></p></p></p></p></p></p></p></p></p></p></p></p></p></pre></html>
 ]]></content:encoded>
     </item>
     
