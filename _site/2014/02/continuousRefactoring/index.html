@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="baidu-site-verification" content="obgOPEXEfR" />
+    <meta name="author" content="mtcle" />
+	<title>Mtcle on the way</title>	    
+   <!-- <link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAD/APr59wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIiIiIiIiAAAiIiIiIiIAACIiIiIiIgERERERERIiAREREREREiIBERERERESIgERIiIiERIiAREiIiIREiIBESIhERESIgERIiERERIiAREiIiIiIiIBESIiIiIiIgERIiIiIiIiAREREREREAABEREREREQAAERERERERAADgAQAA4AEAAOABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAA8AAAAPAAAADwAA" rel="icon" type="image/x-icon" />-->
+    <link href="/feed/" rel="alternate" title="mtcle" type="application/atom+xml" />
+    
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link href='/media/webfonts/ss-social.css' rel='stylesheet'>
+    <link href='/media/webfonts/ss-standard.css' rel='stylesheet'>
+    <link href="/media/css/screen.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <div class="buttons">
+          <a href="/" class="ss-icon" title="Go to homepage">老窝</a>
+          <a href="/categories" class="ss-icon" title="Category" >列表</a>
+          <a href="/tags" class="ss-icon" title="Tag Cloud" >标签</a>
+          <a href="/guestbook" class="ss-icon" title="Guest Book" >留点what?</a>
+          <a href="/about" class="ss-icon" title="About" >whoami</a>
+          <a href="/feed" class="ss-icon" title="Subscribe by RSS" >rss</a>
+        </div>
+        <h1>continuous refactoring</h1>
+        </header>
+      
+        <hr>
+        <article class="/content">
+        <section class="post">
+<h2 id="section">代码的持续重构</h2>
+
+<hr />
+
+<p>代码之美在于不停的重构，不能满足于代码的现状，不能为了实现某个功能而编码，更好的是不停的追逐代码之最。</p>
+
+<hr />
+
+<p>最近呢，图书管理系统也算是完成了，怎么说是算完成呢？因为也就是把基本的业务逻辑完成了，符合了用  <br />
+户需求，但是这远远还不算完成。毕竟还有好多业务的实现分离以及更加有利于扩展的代码抽象等等的都还  <br />
+错的远呢。还有好多具体的小细节还没有实现。缺乏用户友好性，今天呢为系统添加了代码的国际化，以及  <br />
+记录用户数据信息等功能。这些是代码的功能的完善和用户友好度的增加。  <br />
+同时呢，也为了代码的后期扩展增加了可行性。派生出了一个baseJframe抽象类，该类继承了JFrame，其含有  <br />
+的方法有一个记忆用户图形界面操作后的数据，同时还含有一个国际化的获得菜单String的方法。供其他类继承  <br />
+使用。感觉挺好用的。 代码如下：</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">base</span><span class="o">;</span>
+
+
+<span class="kn">import</span> <span class="nn">java.awt.event.WindowEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.awt.event.WindowListener</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.URL</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Locale</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Properties</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.ResourceBundle</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.swing.JFrame</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">BaseJFrame</span> <span class="kd">extends</span> <span class="n">JFrame</span> <span class="kd">implements</span> <span class="n">WindowListener</span> <span class="o">{</span>
+  <span class="cm">/**</span>
+<span class="cm">   * BaseJFrame是由JFrame派生出来的类，实现了windowsListener接口 是个抽象类，主要提供记忆frame用户拖动位置</span>
+<span class="cm">   * 添加了国际化的方法，只要继承basejframe都可以使用</span>
+<span class="cm">   */</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">4672571102889540948L</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">File</span> <span class="n">propertiesFile</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">Properties</span> <span class="n">settings</span><span class="o">;</span>
+
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">DEFAULT_WIDTH</span> <span class="o">=</span> <span class="mi">300</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">DEFAULT_HEIGHT</span> <span class="o">=</span> <span class="mi">200</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">BaseJFrame</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">String</span> <span class="n">userDir</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">&quot;user.home&quot;</span><span class="o">);</span>
+    <span class="n">File</span> <span class="n">propertiesDir</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">File</span><span class="o">(</span><span class="n">userDir</span><span class="o">,</span> <span class="s">&quot;.corejava&quot;</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(!</span><span class="n">propertiesDir</span><span class="o">.</span><span class="na">exists</span><span class="o">())</span> <span class="n">propertiesDir</span><span class="o">.</span><span class="na">mkdir</span><span class="o">();</span>
+    <span class="n">propertiesFile</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">File</span><span class="o">(</span><span class="n">propertiesDir</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getCanonicalName</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;.properties&quot;</span><span class="o">);</span>
+    <span class="n">settings</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Properties</span><span class="o">();</span>
+    <span class="n">settings</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;left&quot;</span><span class="o">,</span> <span class="s">&quot;0&quot;</span><span class="o">);</span>
+    <span class="n">settings</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;top&quot;</span><span class="o">,</span> <span class="s">&quot;0&quot;</span><span class="o">);</span>
+    <span class="n">settings</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;width&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;</span> <span class="o">+</span> <span class="n">DEFAULT_WIDTH</span><span class="o">);</span>
+    <span class="n">settings</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;height&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;</span> <span class="o">+</span> <span class="n">DEFAULT_HEIGHT</span><span class="o">);</span>
+    <span class="n">settings</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;title&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;</span><span class="o">);</span>
+    <span class="n">loadProperties</span><span class="o">();</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="n">URL</span> <span class="nf">getImageURL</span><span class="o">(</span><span class="n">String</span> <span class="n">fileName</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">BaseJFrame</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getResource</span><span class="o">(</span><span class="n">fileName</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getIntPrefs</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">getPrefs</span><span class="o">(</span><span class="n">key</span><span class="o">));</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">getPrefs</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">settings</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">putPrefs</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="n">String</span> <span class="n">value</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">settings</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">windowClosing</span><span class="o">(</span><span class="n">WindowEvent</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">putPrefs</span><span class="o">(</span><span class="s">&quot;left&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;</span> <span class="o">+</span> <span class="n">getX</span><span class="o">());</span>
+    <span class="n">putPrefs</span><span class="o">(</span><span class="s">&quot;top&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;</span> <span class="o">+</span> <span class="n">getY</span><span class="o">());</span>
+    <span class="n">putPrefs</span><span class="o">(</span><span class="s">&quot;width&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;</span> <span class="o">+</span> <span class="n">getWidth</span><span class="o">());</span>
+    <span class="n">putPrefs</span><span class="o">(</span><span class="s">&quot;height&quot;</span><span class="o">,</span> <span class="s">&quot;&quot;</span> <span class="o">+</span> <span class="n">getHeight</span><span class="o">());</span>
+    <span class="n">putPrefs</span><span class="o">(</span><span class="s">&quot;title&quot;</span><span class="o">,</span> <span class="n">getTitle</span><span class="o">());</span>
+
+    <span class="n">restoreProperties</span><span class="o">();</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">restoreProperties</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="o">{</span>
+      <span class="n">FileOutputStream</span> <span class="n">out</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">FileOutputStream</span><span class="o">(</span><span class="n">propertiesFile</span><span class="o">);</span>
+      <span class="n">settings</span><span class="o">.</span><span class="na">store</span><span class="o">(</span><span class="n">out</span><span class="o">,</span> <span class="s">&quot;Program Properties&quot;</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+      <span class="c1">// ignore</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">loadProperties</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="o">{</span>
+      <span class="n">FileInputStream</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">FileInputStream</span><span class="o">(</span><span class="n">propertiesFile</span><span class="o">);</span>
+      <span class="n">settings</span><span class="o">.</span><span class="na">load</span><span class="o">(</span><span class="n">in</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+      <span class="c1">// ignore</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">getObj</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span><span class="c1">// 传入某个值根据国家选择相应的语言返回出去</span>
+  <span class="c1">// Locale locale = Locale.getDefault();</span>
+    <span class="n">Locale</span> <span class="n">locale</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Locale</span><span class="o">(</span><span class="s">&quot;zh&quot;</span><span class="o">,</span> <span class="s">&quot;CN&quot;</span><span class="o">);</span>
+    <span class="c1">// System.out.println(locale.getDisplayCountry());</span>
+    <span class="n">ResourceBundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="n">ResourceBundle</span><span class="o">.</span><span class="na">getBundle</span><span class="o">(</span><span class="s">&quot;BookMgr&quot;</span><span class="o">,</span> <span class="n">locale</span><span class="o">);</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">bundle</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
+    <span class="c1">// System.out.println(bundle.getString(name));</span>
+    <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">windowOpened</span><span class="o">(</span><span class="n">WindowEvent</span> <span class="n">e</span><span class="o">)</span> <span class="o">{}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">windowClosed</span><span class="o">(</span><span class="n">WindowEvent</span> <span class="n">e</span><span class="o">)</span> <span class="o">{}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">windowIconified</span><span class="o">(</span><span class="n">WindowEvent</span> <span class="n">e</span><span class="o">)</span> <span class="o">{}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">windowDeiconified</span><span class="o">(</span><span class="n">WindowEvent</span> <span class="n">e</span><span class="o">)</span> <span class="o">{}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">windowActivated</span><span class="o">(</span><span class="n">WindowEvent</span> <span class="n">e</span><span class="o">)</span> <span class="o">{}</span>
+
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">windowDeactivated</span><span class="o">(</span><span class="n">WindowEvent</span> <span class="n">e</span><span class="o">)</span> <span class="o">{}</span>
+<span class="o">}</span>
+  </code></pre></figure>
+
+<hr />
+
+<p>同时要在ssr下面建立国际化语言文件。例如：  <br />
+<code class="highlighter-rouge">BookMgr_en.properties</code>英文文件  <br />
+<code class="highlighter-rouge">BookMgr_zh_CN.properties</code>简体中文  <br />
+这些名字不是随意起的，<code class="highlighter-rouge">_</code>前面的是程序名字，后面的是固定的</p>
+
+</section>
+<section class="meta">
+<span class="author">
+  By <a href="http://www.mtcle.ml/">mtcle</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2014-02-21">2014-02-21</time>
+</span>
+<br />
+
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#thinking java" title="thinking java">thinking java</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with 
+  
+  <a href="/tags/#java" title="java">java</a>&nbsp;
+  
+  <a href="/tags/#refactor" title="refactor">refactor</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="comment">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'mtcle'; // required: replace example with your forum shortname
+    var disqus_url = 'http://www.mtcle.ml/2014/02/continuousRefactoring/';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://www.mtcle.ml/2014/02/interfacethinking/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://www.mtcle.ml/2014/03/threadlearning/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+        </article>
+
+
+      </div>
+
+    <footer>
+<!--</p><small><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000339674'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/z_stat.php%3Fid%3D1000339674%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script></small>
+        <p>-->
+		<small>Follow <a href="https://github.com/mtcle">Mtcle on github</a> | Copyright 2013 - 2016 by <a href="http://www.mtcle.ml/about/">Mtcle</a> | <span class="label label-info"> 最新更新 2016-06-13</span></small>
+
+</script> 
+    </footer>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49475719-1', 'mtcle.net');
+  ga('send', 'pageview');
+
+</script>
+    </div> 
+
+  </body>
+</html>

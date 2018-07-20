@@ -1,0 +1,21 @@
+markdown: kramdown
+permalink: /:year/:month/:title/
+url: http://www.mtcle.ml
+production_url : http://www.mtcle.ml
+author: mtcle
+gems: [jekyll-paginate]
+paginate: 8
+highlighter: pygments
+BASE_PATH : http://www.mtcle.ml
+ASSET_PATH : http://www.mtcle.ml
+
+kramdown:
+  input: GFM
+  extensions:
+    - autolink
+    - footnotes
+    - smart
+  enable_coderay: true
+  syntax_highlighter: rouge
+  coderay:
+    coderay_line_numbers:  nil
