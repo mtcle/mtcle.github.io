@@ -65,8 +65,8 @@ exclude: ['node_modules', 'dev', 'package.json', 'gulpfile.js', '.gitignore', 'R
 
 # Markdown
 markdown: kramdown
-#highlighter: rouge
-highlighter: pygments
+highlighter: rouge
+#highlighter: pygments
 
 kramdown:
   input: GFM

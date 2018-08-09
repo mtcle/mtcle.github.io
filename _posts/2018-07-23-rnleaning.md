@@ -9,7 +9,7 @@ layout: post
 title: 'react-native 填坑'
 date: 2018-07-23
 author: mtcle
-cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-banner.png'
+cover: '/source/pages/jekyll-banner.png'
 tags: react-native
 ---
 
@@ -32,7 +32,7 @@ tags: react-native
 模拟器Ctrl+M 打开菜单   
 
 ## 界面开发
-### flex布局 [详情](http://www.cnblogs.com/moyuling/p/562ec056372dd112ee96d3d24d410da8.html)
+### flex布局 [详情](https://www.cnblogs.com/moyuling/p/562ec056372dd112ee96d3d24d410da8.html)
 **root布局**
 
 > display：flex   
@@ -60,20 +60,19 @@ Object.assign(target, source1, source2);
 target // {a:1, b:2, c:3}
 {% endhighlight %}   
 `Object.assign`拷贝的属性是有限制的，只拷贝源对象的自身属性（不拷贝继承属性），也不拷贝不可枚举的属性（`enumerable: false`）
-    
+
 - Symbol() ES6引入得到一个唯一值    
-   是第七种数据类型，前六种是：undefined、null、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）  
-   可以使用`const COLOR_RED= Symbol();`来定义一个常量，这个常量就是唯一值
-- Set 和java的Set一样，都是不能有重复值    
->    
-```
-add(value)：添加某个值，返回 Set 结构本身。
-delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。
-has(value)：返回一个布尔值，表示该值是否为Set的成员。
-clear()：清除所有成员，没有返回值。
-```
+是第七种数据类型，前六种是：undefined、null、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）可以使用`const COLOR_RED= Symbol();`来定义一个常量，这个常量就是唯一值
+- Set 和java的Set一样，都是不能有重复值		
+
+	>
+add(value)：添加某个值，返回 Set 结构本身。     
+delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。     
+has(value)：返回一个布尔值，表示该值是否为Set的成员。     
+clear()：清除所有成员，没有返回值。     
+
 - Proxy 代理，有点类似拦截器    
-- Promise 异步操作容器[引用](http://www.cnblogs.com/lvdabao/p/es6-promise-1.html)
+- Promise 异步操作容器[引用](https://www.cnblogs.com/lvdabao/p/es6-promise-1.html)
         
 {% highlight javascript%}   
 const promise = new Promise((resolve, reject) => {
@@ -141,7 +140,6 @@ ES6 的模块自动采用严格模式，不管你有没有在模块头部加上`
 - eval不会在它的外层作用域引入变量
 - eval和arguments不能被重新赋值
 - arguments不会自动反映函数参数的变化
-- 不能使用arguments.callee
 - 不能使用arguments.caller
 - 禁止this指向全局对象
 - 不能使用fn.caller和fn.arguments获取函数    调用的堆栈
@@ -207,16 +205,18 @@ import('./myModule.js')
  console.log(myModule.default);
 });	
 
-{% endhighlight%}
-**module的加载实现**
-{% highlight html %}
+{% endhighlight%}	
+
+**module的加载实现**	
+{% highlight javascript %}
  <!-- 1、传统做法-->
  <!-- 页面内嵌的脚本 -->
  <script type="application/javascript">
 
  </script>
  <!-- 外部脚本，通过defer或async属性 表示该module是同步加载还是异步加载-->
- <script type="application/javascript" src="path/to/myModule.js" defer|async></script>
+ <script type="application/javascript" src="path/to/myModule.js" 
+ defer|async></script>
 
  <!-- 2、es6做法-->
  <!-- es6模块全是异步加载，无法设置同步-->
