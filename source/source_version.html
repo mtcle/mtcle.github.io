@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>各个源码版本</h1>
+<h2>细分版本	分支	版本	支持的设备</h2>
+<ul>
+<li>OPR5.170623.007	android-8.0.0_r17	Oreo	Nexus 6P</li>
+<li>OPR4.170623.009	android-8.0.0_r16	Oreo	Nexus 5X</li>
+<li>OPR3.170623.008	android-8.0.0_r15	Oreo	Pixel XL、Pixel</li>
+<li>OPR1.170623.027	android-8.0.0_r13	Oreo	Pixel XL、Pixel、Pixel C</li>
+<li>OPR6.170623.021	android-8.0.0_r12	Oreo	Nexus Player</li>
+<li>OPR6.170623.019	android-8.0.0_r11	Oreo	Nexus 6P</li>
+<li>OPR4.170623.006	android-8.0.0_r10	Oreo	Nexus 5X</li>
+<li>OPR3.170623.007	android-8.0.0_r9	Oreo	Pixel XL、Pixel</li>
+<li>OPR1.170623.026	android-8.0.0_r7	Oreo	Pixel XL、Pixel、Pixel C</li>
+<li>OPR6.170623.013	android-8.0.0_r4	Oreo	Nexus 5X、Nexus 6P</li>
+<li>OPR6.170623.012	android-8.0.0_r3	Oreo	Pixel XL、Pixel</li>
+<li>OPR6.170623.011	android-8.0.0_r2	Oreo	Pixel XL、Pixel</li>
+<li>OPR6.170623.010	android-8.0.0_r1	Oreo	Pixel C</li>
+<li>NZH54D	android-7.1.2_r33	Nougat	Pixel XL、Pixel</li>
+<li>NKG47S	android-7.1.2_r32	Nougat	Pixel XL、Pixel</li>
+<li>NHG47Q	android-7.1.2_r30	Nougat	Pixel XL、Pixel</li>
+<li>NJH47F	android-7.1.2_r29	Nougat	Pixel XL、Pixel</li>
+<li>N2G48C	android-7.1.2_r28	Nougat	Nexus 5X、Nexus 6P、Nexus Player、Pixel C</li>
+<li>NZH54B	android-7.1.2_r27	Nougat	Pixel XL、Pixel</li>
+<li>NKG47M	android-7.1.2_r25	Nougat	Pixel XL、Pixel</li>
+<li>NJH47D	android-7.1.2_r24	Nougat	Pixel XL、Pixel</li>
+<li>NHG47O	android-7.1.2_r23	Nougat	Pixel XL、Pixel</li>
+<li>N2G48B	android-7.1.2_r19	Nougat	Nexus 6P、Nexus Player、Pixel C</li>
+<li>N2G47Z	android-7.1.2_r18	Nougat	Nexus 5X</li>
+<li>NJH47B	android-7.1.2_r17	Nougat	Pixel XL、Pixel</li>
+<li>NJH34C	android-7.1.2_r16	Nougat	Pixel XL、Pixel</li>
+<li>NKG47L	android-7.1.2_r15	Nougat	Pixel XL、Pixel</li>
+<li>NHG47N	android-7.1.2_r14	Nougat	Pixel XL、Pixel</li>
+<li>N2G47X	android-7.1.2_r13	Nougat	Nexus Player</li>
+<li>N2G47W	android-7.1.2_r12	Nougat	Nexus 5X、Nexus 6P、Pixel C</li>
+<li>NHG47L	android-7.1.2_r11	Nougat	Pixel XL、Pixel</li>
+<li>N2G47T	android-7.1.2_r10	Nougat	Pixel XL、Pixel</li>
+<li>N2G47R	android-7.1.2_r9	Nougat	Nexus Player</li>
+<li>N2G47O	android-7.1.2_r8	Nougat	Nexus 5X、Nexus 6P、Pixel XL、Pixel、Pixel C</li>
+<li>NHG47K	android-7.1.2_r6	Nougat	Pixel XL、Pixel</li>
+<li>N2G47J	android-7.1.2_r5	Nougat	Pixel XL、Pixel</li>
+<li>N2G47H	android-7.1.2_r4	Nougat	Nexus 6P、Nexus Player</li>
+<li>N2G47F	android-7.1.2_r3	Nougat	Nexus 5X</li>
+<li>N2G47E	android-7.1.2_r2	Nougat	Pixel XL、Pixel</li>
+<li>N2G47D	android-7.1.2_r1	Nougat	Pixel C</li>
+<li>N9F27M	android-7.1.1_r58	Nougat	Nexus 9 (volantis)</li>
+<li>NGI77B	android-7.1.1_r57	Nougat	Nexus 6</li>
+<li>N6F27M	android-7.1.1_r55	Nougat	Nexus 6</li>
+<li>N4F27P	android-7.1.1_r54	Nougat	Nexus 9 (volantisg)</li>
+<li>N9F27L	android-7.1.1_r53	Nougat	Nexus 9</li>
+<li>NGI55D	android-7.1.1_r52	Nougat	Nexus 6</li>
+<li>N4F27O	android-7.1.1_r51	Nougat	Nexus 9 (volantisg)</li>
+<li>N8I11B	android-7.1.1_r50	Nougat	Nexus 6</li>
+<li>N9F27H	android-7.1.1_r49	Nougat	Nexus 9 (volantis)</li>
+<li>N6F27I	android-7.1.1_r48	Nougat	Nexus 6</li>
+<li>N4F27K	android-7.1.1_r47	Nougat	Nexus 9 (volantisg)</li>
+<li>N9F27F	android-7.1.1_r46	Nougat	Nexus 9 (volantis)</li>
+<li>N6F27H	android-7.1.1_r45	Nougat	Nexus 6</li>
+<li>N4F27I	android-7.1.1_r44	Nougat	Nexus 9 (volantisg)</li>
+<li>N9F27C	android-7.1.1_r43	Nougat	Nexus 9 (volantis)</li>
+<li>N6F27E	android-7.1.1_r42	Nougat	Nexus 6</li>
+<li>N4F27E	android-7.1.1_r41	Nougat	Nexus 9 (volantisg)</li>
+<li>N6F27C	android-7.1.1_r40	Nougat	Nexus 6</li>
+<li>N4F27B	android-7.1.1_r39	Nougat	Nexus 9 (volantis/volantisg)</li>
+<li>N6F26Y	android-7.1.1_r38	Nougat	Nexus 6</li>
+<li>NOF27D	android-7.1.1_r35	Nougat	Pixel XL、Pixel</li>
+<li>N4F26X	android-7.1.1_r33	Nougat	Nexus 9 (volantis/volantisg)</li>
+<li>N4F26U	android-7.1.1_r31	Nougat	Nexus 5X、Nexus 6P</li>
+<li>N6F26U	android-7.1.1_r28	Nougat	Nexus 6</li>
+<li>NUF26N	android-7.1.1_r27	Nougat	Nexus 6P</li>
+<li>NOF27C	android-7.1.1_r26	Nougat	Pixel XL、Pixel</li>
+<li>NOF27B	android-7.1.1_r25	Nougat	Pixel XL、Pixel</li>
+<li>N4F26T	android-7.1.1_r24	Nougat	Nexus 5X、Nexus 6P、Nexus 9 (volantis/volantisg)、Pixel C</li>
+<li>NMF27D	android-7.1.1_r23	Nougat	Nexus Player</li>
+<li>NMF26X	android-7.1.1_r22	Nougat	Nexus Player</li>
+<li>NOF26W	android-7.1.1_r21	Nougat	Pixel XL、Pixel</li>
+<li>NOF26V	android-7.1.1_r20	Nougat	Pixel XL、Pixel</li>
+<li>N6F26R	android-7.1.1_r17	Nougat	Nexus 6</li>
+<li>NUF26K	android-7.1.1_r16	Nougat	Nexus 6P</li>
+<li>N4F26Q	android-7.1.1_r15	Nougat	Nexus 9 (volantis/volantisg)</li>
+<li>N4F26O	android-7.1.1_r14	Nougat	Nexus 5X、Nexus 6P、Pixel C</li>
+<li>N6F26Q	android-7.1.1_r13	Nougat	Nexus 6</li>
+<li>N4F26M	android-7.1.1_r12	Nougat	Nexus 9 (volantis)</li>
+<li>N4F26J	android-7.1.1_r11	Nougat	Nexus 5X、Nexus 6P</li>
+<li>N4F26I	android-7.1.1_r10	Nougat	Nexus 5X、Nexus 6P、Pixel C</li>
+<li>NMF26V	android-7.1.1_r9	Nougat	Pixel XL、Pixel</li>
+<li>NMF26U	android-7.1.1_r8	Nougat	Pixel XL、Pixel</li>
+<li>NMF26R	android-7.1.1_r7	Nougat	Nexus Player</li>
+<li>NMF26Q	android-7.1.1_r6	Nougat	Pixel XL、Pixel</li>
+<li>NMF26O	android-7.1.1_r4	Nougat	Pixel XL、Pixel</li>
+<li>NMF26J	android-7.1.1_r3	Nougat	Nexus Player</li>
+<li>NMF26H	android-7.1.1_r2	Nougat	Pixel C</li>
+<li>NMF26F	android-7.1.1_r1	Nougat	Nexus 5X、Nexus 6P、Nexus 9 (volantis/volantisg)</li>
+<li>NDE63X	android-7.1.0_r7	Nougat	Pixel XL、Pixel</li>
+<li>NDE63V	android-7.1.0_r6	Nougat	Pixel XL、Pixel</li>
+<li>NDE63U	android-7.1.0_r5	Nougat	Pixel XL、Pixel</li>
+<li>NDE63P	android-7.1.0_r4	Nougat	Pixel XL、Pixel</li>
+<li>NDE63L	android-7.1.0_r2	Nougat	Pixel XL、Pixel</li>
+<li>NDE63H	android-7.1.0_r1	Nougat	Pixel XL、Pixel</li>
+<li>NBD92G	android-7.0.0_r33	Nougat	Nexus 6</li>
+<li>NBD92F	android-7.0.0_r32	Nougat	Nexus 6</li>
+<li>NBD92E	android-7.0.0_r31	Nougat	Nexus 6</li>
+<li>NBD92D	android-7.0.0_r30	Nougat	Nexus 6</li>
+<li>NBD91Z	android-7.0.0_r29	Nougat	Nexus 6</li>
+<li>NBD91Y	android-7.0.0_r28	Nougat	Nexus 6</li>
+<li>NBD91X	android-7.0.0_r27	Nougat	Nexus 6</li>
+<li>NBD91U	android-7.0.0_r24	Nougat	Nexus 6</li>
+<li>N5D91L	android-7.0.0_r21	Nougat	Nexus 5X</li>
+<li>NBD91P	android-7.0.0_r19	Nougat	Nexus 6</li>
+<li>NRD91K	android-7.0.0_r17	Nougat	Nexus 6P</li>
+<li>NRD91N	android-7.0.0_r15	Nougat	Nexus 5X、Pixel C、Nexus Player、Nexus 9 (volantis/volantisg)</li>
+<li>NBD90Z	android-7.0.0_r14	Nougat	Nexus 6</li>
+<li>NBD90X	android-7.0.0_r13	Nougat	Nexus 6P</li>
+<li>NBD90W	android-7.0.0_r12	Nougat	Nexus 5X</li>
+<li>NRD91D	android-7.0.0_r7	Nougat	Pixel C、Nexus Player、Nexus 9 (WLAN)</li>
+<li>NRD90U	android-7.0.0_r6	Nougat	Nexus 6P</li>
+<li>NRD90T	android-7.0.0_r5	Nougat	Nexus 6P</li>
+<li>NRD90S	android-7.0.0_r4	Nougat	Nexus 5X</li>
+<li>NRD90R	android-7.0.0_r3	Nougat	Nexus 5X、Nexus 9 (volantis)、Nexus Player、Pixel C</li>
+<li>NRD90M	android-7.0.0_r1	Nougat	Nexus 5X、Nexus 9 (volantis)、Nexus Player、Pixel C</li>
+<li>MOB31Z	android-6.0.1_r80	Marshmallow	</li>
+<li>MOB31T	android-6.0.1_r79	Marshmallow	Nexus 6</li>
+<li>MOB31S	android-6.0.1_r78	Marshmallow	Nexus 6</li>
+<li>M4B30Z	android-6.0.1_r77	Marshmallow	Nexus 5</li>
+<li>MOB31K	android-6.0.1_r74	Marshmallow	Nexus 6</li>
+<li>MMB31C	android-6.0.1_r73	Marshmallow	Nexus 6</li>
+<li>M4B30X	android-6.0.1_r72	Marshmallow	Nexus 5</li>
+<li>MOB31H	android-6.0.1_r70	Marshmallow	Nexus 6</li>
+<li>MMB30Y	android-6.0.1_r69	Marshmallow	Nexus 6</li>
+<li>MTC20K	android-6.0.1_r67	Marshmallow	Nexus 5X</li>
+<li>MOB31E	android-6.0.1_r66	Marshmallow	Nexus 5、Nexus 6、Nexus 9 (volantis)</li>
+<li>MMB30W	android-6.0.1_r65	Marshmallow	Nexus 6</li>
+<li>MXC89L	android-6.0.1_r63	Marshmallow	Pixel C</li>
+<li>MTC20F	android-6.0.1_r62	Marshmallow	Nexus 5X、Nexus 6P</li>
+<li>MOB30Y	android-6.0.1_r60	Marshmallow	Nexus 5</li>
+<li>MOB30X	android-6.0.1_r59	Marshmallow	Nexus 7 (flo/deb)</li>
+<li>MOB30W	android-6.0.1_r58	Marshmallow	Nexus 6、Nexus 9 (volantis/volantisg)、Nexus Player</li>
+<li>MMB30S	android-6.0.1_r57	Marshmallow	Nexus 7 (deb)</li>
+<li>MMB30R	android-6.0.1_r56	Marshmallow	Nexus 6</li>
+<li>MXC89K	android-6.0.1_r55	Marshmallow	Pixel C</li>
+<li>MTC19Z	android-6.0.1_r54	Marshmallow	Nexus 5X</li>
+<li>MTC19X	android-6.0.1_r53	Marshmallow	Nexus 6P</li>
+<li>MOB30P	android-6.0.1_r50	Marshmallow	Nexus 5、Nexus 7 (flo/deb)、Nexus 9 (volantis/volantisg)、Nexus Player</li>
+<li>MOB30O	android-6.0.1_r49	Marshmallow	Nexus 6</li>
+<li>MMB30M	android-6.0.1_r48	Marshmallow	Nexus 7 (deb)</li>
+<li>MMB30K	android-6.0.1_r47	Marshmallow	Nexus 6</li>
+<li>MOB30M	android-6.0.1_r46	Marshmallow	Nexus 5、Nexus 6、Nexus 7 (flo/deb)、Nexus 9 (volantis/volantisg)、Nexus Player</li>
+<li>MTC19V	android-6.0.1_r45	Marshmallow	Nexus 5X、Nexus 6P</li>
+<li>MOB30J	android-6.0.1_r43	Marshmallow	Nexus 7 (flo/deb)</li>
+<li>MOB30I	android-6.0.1_r42	Marshmallow	Nexus 6</li>
+<li>MOB30H	android-6.0.1_r41	Marshmallow	Nexus 5</li>
+<li>MOB30G	android-6.0.1_r40	Marshmallow	Nexus 9 (volantis/volantisg)、Nexus Player</li>
+<li>MXC89H	android-6.0.1_r33	Marshmallow	Pixel C</li>
+<li>MXC89F	android-6.0.1_r32	Marshmallow	Pixel C</li>
+<li>MMB30J	android-6.0.1_r28	Marshmallow	Nexus 6、Nexus 7 (deb)</li>
+<li>MTC19T	android-6.0.1_r25	Marshmallow	Nexus 5X、Nexus 6P</li>
+<li>M5C14J	android-6.0.1_r31	Marshmallow	Pixel C</li>
+<li>MOB30D	android-6.0.1_r30	Marshmallow	Nexus 5、Nexus 6、Nexus 7 (flo/deb)、Nexus 9 (volantis/volantisg)、Nexus Player</li>
+<li>MHC19Q	android-6.0.1_r24	Marshmallow	Nexus 5X、Nexus 6P</li>
+<li>MHC19J	android-6.0.1_r22	Marshmallow	Nexus 5X</li>
+<li>MHC19I	android-6.0.1_r21	Marshmallow	Nexus 6P</li>
+<li>MMB29X	android-6.0.1_r20	Marshmallow	Nexus 5、Nexus 6、Nexus 7 (deb)、Nexus 9 (volantisg)</li>
+<li>MXC14G	android-6.0.1_r18	Marshmallow	Pixel C</li>
+<li>MMB29V	android-6.0.1_r17	Marshmallow	Nexus 5、Nexus 5X、Nexus 6、Nexus 6P、Nexus 7 (flo/deb)、Nexus 9 (volantis/volantisg)</li>
+<li>MXB48T	android-6.0.1_r16	Marshmallow	Pixel C</li>
+<li>MMB29U	android-6.0.1_r13	Marshmallow	Nexus Player</li>
+<li>MMB29R	android-6.0.1_r12	Marshmallow	Nexus 9 (volantis/volantisg)</li>
+<li>MMB29Q	android-6.0.1_r11	Marshmallow	Nexus 5、Nexus 5X、Nexus 6、Nexus 6P、Nexus 7 (flo/deb)</li>
+<li>MMB29T	android-6.0.1_r10	Marshmallow	Nexus Player</li>
+<li>MMB29S	android-6.0.1_r9	Marshmallow	Nexus 5、Nexus 6、Nexus 9 (volantis/volantisg)</li>
+<li>MMB29P	android-6.0.1_r8	Marshmallow	Nexus 5X、Nexus 6P</li>
+<li>MMB29O	android-6.0.1_r7	Marshmallow	Nexus 7 (flo/deb)</li>
+<li>MXB48K	android-6.0.1_r5	Marshmallow	Pixel C</li>
+<li>MXB48J	android-6.0.1_r4	Marshmallow	Pixel C</li>
+<li>MMB29M	android-6.0.1_r3	Marshmallow	Nexus 6P、Nexus Player</li>
+<li>MMB29K	android-6.0.1_r1	Marshmallow	Nexus 5、Nexus 5X、Nexus 6、Nexus 7 (flo/deb)、Nexus 9 (volantis/volantisg)</li>
+<li>MMB29N	android-6.0.0_r41	Marshmallow	Nexus 6P</li>
+<li>MDB08M	android-6.0.0_r26	Marshmallow	Nexus 5X、Nexus 6P</li>
+<li>MDB08L	android-6.0.0_r25	Marshmallow	Nexus 5X、Nexus 6P</li>
+<li>MDB08K	android-6.0.0_r24	Marshmallow	Nexus 6P</li>
+<li>MDB08I	android-6.0.0_r23	Marshmallow	Nexus 5X</li>
+<li>MDA89E	android-6.0.0_r12	Marshmallow	Nexus 5X</li>
+<li>MDA89D	android-6.0.0_r11	Marshmallow	Nexus 6P</li>
+<li>MRA59B	android-6.0.0_r7	Marshmallow	Nexus 7 (deb)</li>
+<li>MRA58X	android-6.0.0_r6	Marshmallow	Nexus 6</li>
+<li>MRA58V	android-6.0.0_r5	Marshmallow	Nexus 7 (flo/deb)</li>
+<li>MRA58U	android-6.0.0_r4	Marshmallow	Nexus 7 (flo)</li>
+<li>MRA58N	android-6.0.0_r2	Marshmallow	Nexus 5、Nexus 6、Nexus 7 (flo/deb)、Nexus 9 (volantis/volantisg)、Nexus Player</li>
+<li>MRA58K	android-6.0.0_r1	Marshmallow	Nexus 5、Nexus 6、Nexus 7 (flo/deb)、Nexus 9 (volantis/volantisg)、Nexus Player</li>
+<li>LMY49M	android-5.1.1_r38	Lollipop	Nexus 10</li>
+<li>LMY49J	android-5.1.1_r37	Lollipop	Nexus 10</li>
+<li>LMY49I	android-5.1.1_r36	Lollipop	Nexus 10</li>
+<li>LMY49H	android-5.1.1_r35	Lollipop	Nexus 10</li>
+<li>LMY49G	android-5.1.1_r34	Lollipop	Nexus 10</li>
+<li>LMY49F	android-5.1.1_r33	Lollipop	Nexus 9 (volantisg)、Nexus 10</li>
+<li>LMY48Z	android-5.1.1_r30	Lollipop	Nexus 6、Nexus 7 (deb)、Nexus 9 (volantisg)、Nexus 10</li>
+<li>LYZ28N	android-5.1.1_r28	Lollipop	Nexus 6（仅面向 T-Mobile）</li>
+<li>LMY48Y	android-5.1.1_r26	Lollipop	Nexus 6</li>
+<li>LMY48X	android-5.1.1_r25	Lollipop	Nexus 6、Nexus 7 (deb)、Nexus 9 (volantisg)、Nexus 10</li>
+<li>LMY48W	android-5.1.1_r24	Lollipop	Nexus 6</li>
+<li>LVY48H	android-5.1.1_r23	Lollipop	Nexus 6（仅面向 Project Fi）</li>
+<li>LYZ28M	android-5.1.1_r22	Lollipop	Nexus 6（仅面向 T-Mobile）</li>
+<li>LMY48U	android-5.1.1_r20	Lollipop	Nexus 7 (deb)</li>
+<li>LMY48T	android-5.1.1_r19	Lollipop	Nexus 4、Nexus 6、Nexus 9 (volantis/volantisg)、Nexus 10</li>
+<li>LVY48F	android-5.1.1_r18	Lollipop	Nexus 6（仅面向 Project Fi）</li>
+<li>LYZ28K	android-5.1.1_r17	Lollipop	Nexus 6（仅面向 T-Mobile）</li>
+<li>LMY48P	android-5.1.1_r16	Lollipop	Nexus 7 (deb)</li>
+<li>LMY48N	android-5.1.1_r15	Lollipop	Nexus Player</li>
+<li>LMY48M	android-5.1.1_r14	Lollipop	Nexus 4、Nexus 5、Nexus 6、Nexus 7 (flo)、Nexus 9 (volantis/volantisg)、Nexus 10</li>
+<li>LVY48E	android-5.1.1_r13	Lollipop	Nexus 6（仅面向 Project Fi）</li>
+<li>LYZ28J	android-5.1.1_r12	Lollipop	Nexus 6（仅面向 T-Mobile）</li>
+<li>LMY48J	android-5.1.1_r10	Lollipop	Nexus Player</li>
+<li>LMY48I	android-5.1.1_r9	Lollipop	Nexus 4、Nexus 5、Nexus 6、Nexus 7 (flo)、Nexus 9 (volantis/volantisg)、Nexus 10</li>
+<li>LVY48C	android-5.1.1_r8	Lollipop	Nexus 6（仅面向 Project Fi）</li>
+<li>LMY48G	android-5.1.1_r6	Lollipop	Nexus 7 (flo)</li>
+<li>LYZ28E	android-5.1.1_r5	Lollipop	Nexus 6（仅面向 T-Mobile）</li>
+<li>LMY47Z	android-5.1.1_r4	Lollipop	Nexus 6（面向除 T-Mobile（美国）之外的所有运营商）</li>
+<li>LMY48B	android-5.1.1_r3	Lollipop	Nexus 5</li>
+<li>LMY47X	android-5.1.1_r2	Lollipop	Nexus 9 (volantis)</li>
+<li>LMY47V	android-5.1.1_r1	Lollipop	Nexus 7 (flo/grouper)、Nexus 10、Nexus Player</li>
+<li>LMY47O	android-5.1.0_r5	Lollipop	Nexus 4、Nexus 7 (flo/deb)</li>
+<li>LMY47M	android-5.1.0_r4	Lollipop	Nexus 6（仅面向 T-Mobile）</li>
+<li>LMY47I	android-5.1.0_r3	Lollipop	Nexus 5、Nexus 6</li>
+<li>LMY47E	android-5.1.0_r2	Lollipop	Nexus 6</li>
+<li>LMY47D	android-5.1.0_r1	Lollipop	Nexus 5、Nexus 6、Nexus 7 (grouper/tilapia)、Nexus 10、Nexus Player</li>
+<li>LRX22L	android-5.0.2_r3	Lollipop	Nexus 9 (volantis/volantisg)</li>
+<li>LRX22G	android-5.0.2_r1	Lollipop	Nexus 7 (flo/deb/grouper/tilapia)、Nexus 10</li>
+<li>LRX22C	android-5.0.1_r1	Lollipop	Nexus 4、Nexus 5、Nexus 6 (shamu)、Nexus 7 (flo)、Nexus 9 (volantis/volantisg)、Nexus 10</li>
+<li>LRX21V	android-5.0.0_r7.0.1	Lollipop	Nexus Player (fugu)</li>
+<li>LRX21T	android-5.0.0_r6.0.1	Lollipop	Nexus 4</li>
+<li>LRX21R	android-5.0.0_r5.1.0.1	Lollipop	Nexus 9 (volantis)</li>
+<li>LRX21Q	android-5.0.0_r5.0.1	Lollipop	Nexus 9 (volantis)</li>
+<li>LRX21P	android-5.0.0_r4.0.1	Lollipop	Nexus 7 (flo/grouper)、Nexus 10</li>
+<li>LRX21O	android-5.0.0_r3.0.1	Lollipop	Nexus 5 (hammerhead)、Nexus 6 (shamu)</li>
+<li>LRX21M	android-5.0.0_r2.0.1	Lollipop	Nexus Player (fugu)</li>
+<li>LRX21L	android-5.0.0_r1.0.1	Lollipop	Nexus 9 (volantis)</li>
+<li>KTU84Q	android-4.4.4_r2	KitKat	Nexus 5 (hammerhead)（仅面向新西兰的 2Degrees、澳大利亚的 Telstra 和印度）</li>
+<li>KTU84P	android-4.4.4_r1	KitKat	Nexus 5、Nexus 7 (flo/deb/grouper/tilapia)、Nexus 4、Nexus 10</li>
+<li>KTU84M	android-4.4.3_r1.1	KitKat	Nexus 5 (hammerhead)</li>
+<li>KTU84L	android-4.4.3_r1	KitKat	Nexus 7 (flo/deb/grouper/tilapia)、Nexus 4、Nexus 10</li>
+<li>KVT49L	android-4.4.2_r2	KitKat	Nexus 7 (deb Verizon)</li>
+<li>KOT49H	android-4.4.2_r1	KitKat	Nexus 5、Nexus 7 (flo/deb/grouper/tilapia)、Nexus 4、Nexus 10</li>
+<li>KOT49E	android-4.4.1_r1	KitKat	Nexus 5、Nexus 7 (flo/deb/grouper/tilapia)、Nexus 4、Nexus 10</li>
+<li>KRT16S	android-4.4_r1.2	KitKat	Nexus 7 (flo/deb/grouper/tilapia)、Nexus 4、Nexus 10</li>
+<li>KRT16M	android-4.4_r1	KitKat	Nexus 5 (hammerhead)</li>
+<li>JLS36I	android-4.3.1_r1	Jelly Bean	Nexus 7 (deb)</li>
+<li>JLS36C	android-4.3_r3	Jelly Bean	Nexus 7 (deb)</li>
+<li>JSS15R	android-4.3_r2.3	Jelly Bean	Nexus 7 (flo)</li>
+<li>JSS15Q	android-4.3_r2.2	Jelly Bean	Nexus 7 (flo)</li>
+<li>JSS15J	android-4.3_r2.1	Jelly Bean	Nexus 7 (flo/deb)</li>
+<li>JSR78D	android-4.3_r2	Jelly Bean	Nexus 7 (deb)</li>
+<li>JWR66Y	android-4.3_r1.1	Jelly Bean	Galaxy Nexus、Nexus 7 (grouper/tilapia)、Nexus 4、Nexus 10</li>
+<li>JWR66V	android-4.3_r1	Jelly Bean	Galaxy Nexus、Nexus 7 (grouper/tilapia)、Nexus 4、Nexus 10</li>
+<li>JWR66N	android-4.3_r0.9.1	Jelly Bean	Galaxy Nexus、Nexus 7 (grouper/tilapia/flo)、Nexus 4、Nexus 10</li>
+<li>JWR66L	android-4.3_r0.9	Jelly Bean	Nexus 7</li>
+<li>JDQ39E	android-4.2.2_r1.2	Jelly Bean	Nexus 4</li>
+<li>JDQ39B	android-4.2.2_r1.1	Jelly Bean	Nexus 7</li>
+<li>JDQ39	android-4.2.2_r1	Jelly Bean	Galaxy Nexus、Nexus 7、Nexus 4、Nexus 10</li>
+<li>JOP40G	android-4.2.1_r1.2	Jelly Bean	Nexus 4</li>
+<li>JOP40F	android-4.2.1_r1.1	Jelly Bean	Nexus 10</li>
+<li>JOP40D	android-4.2.1_r1	Jelly Bean	Galaxy Nexus、Nexus 7、Nexus 4、Nexus 10</li>
+<li>JOP40C	android-4.2_r1	Jelly Bean	Galaxy Nexus、Nexus 7、Nexus 4、Nexus 10</li>
+<li>JZO54M	android-4.1.2_r2.1	Jelly Bean	</li>
+<li>JZO54L	android-4.1.2_r2	Jelly Bean	</li>
+<li>JZO54K	android-4.1.2_r1	Jelly Bean	Nexus S、Galaxy Nexus、Nexus 7</li>
+<li>JRO03S	android-4.1.1_r6.1	Jelly Bean	Nexus 7</li>
+<li>JRO03R	android-4.1.1_r6	Jelly Bean	Nexus S 4G</li>
+<li>JRO03O	android-4.1.1_r5	Jelly Bean	Galaxy Nexus</li>
+<li>JRO03L	android-4.1.1_r4	Jelly Bean	Nexus S</li>
+<li>JRO03H	android-4.1.1_r3	Jelly Bean	</li>
+<li>JRO03E	android-4.1.1_r2	Jelly Bean	Nexus S</li>
+<li>JRO03D	android-4.1.1_r1.1	Jelly Bean	Nexus 7</li>
+<li>JRO03C	android-4.1.1_r1	Jelly Bean	Galaxy Nexus</li>
+<li>IMM76L	android-4.0.4_r2.1	Ice Cream Sandwich	 </li>
+<li>IMM76K	android-4.0.4_r2	Ice Cream Sandwich	Galaxy Nexus</li>
+<li>IMM76I	android-4.0.4_r1.2	Ice Cream Sandwich	Galaxy Nexus</li>
+<li>IMM76D	android-4.0.4_r1.1	Ice Cream Sandwich	Nexus S、Nexus S 4G、Galaxy Nexus</li>
+<li>IMM76	android-4.0.4_r1	Ice Cream Sandwich	</li>
+<li>IML77	android-4.0.3_r1.1	Ice Cream Sandwich	</li>
+<li>IML74K	android-4.0.3_r1	Ice Cream Sandwich	Nexus S</li>
+<li>ICL53F	android-4.0.2_r1	Ice Cream Sandwich	Galaxy Nexus</li>
+<li>ITL41F	android-4.0.1_r1.2	Ice Cream Sandwich	Galaxy Nexus</li>
+<li>ITL41D	android-4.0.1_r1.1	Ice Cream Sandwich	Galaxy Nexus</li>
+<li>ITL41D	android-4.0.1_r1	Ice Cream Sandwich	Galaxy Nexus</li>
+<li>GWK74	android-2.3.7_r1	Gingerbread	Nexus S 4G</li>
+<li>GRK39F	android-2.3.6_r1	Gingerbread	Nexus One、Nexus S</li>
+<li>GRK39C	android-2.3.6_r0.9	Gingerbread	Nexus S</li>
+<li>GRJ90	android-2.3.5_r1	Gingerbread	Nexus S 4G</li>
+<li>GRJ22	android-2.3.4_r1	Gingerbread	Nexus One、Nexus S、Nexus S 4G</li>
+<li>GRJ06D	android-2.3.4_r0.9	Gingerbread	Nexus S 4G</li>
+<li>GRI54	android-2.3.3_r1.1	Gingerbread	Nexus S</li>
+<li>GRI40	android-2.3.3_r1	Gingerbread	Nexus One、Nexus S</li>
+<li>GRH78C	android-2.3.2_r1	Gingerbread	Nexus S</li>
+<li>GRH78	android-2.3.1_r1	Gingerbread	Nexus S</li>
+<li>GRH55	android-2.3_r1	Gingerbread	使用 Gingerbread 最早期版本的设备、Nexus S</li>
+<li>FRK76C	android-2.2.3_r2	Froyo	 </li>
+<li>FRK76	android-2.2.3_r1	Froyo	</li>
+<li>FRG83G	android-2.2.2_r1	Froyo	Nexus One</li>
+<li>FRG83D	android-2.2.1_r2	Froyo	Nexus One</li>
+<li>FRG83	android-2.2.1_r1	Froyo	Nexus One</li>
+<li>FRG22D	android-2.2_r1.3	Froyo	</li>
+<li>FRG01B	android-2.2_r1.2	Froyo	</li>
+<li>FRF91	android-2.2_r1.1	Froyo	Nexus One</li>
+<li>FRF85B	android-2.2_r1	Froyo	Nexus One</li>
+<li>EPF21B	android-2.1_r2.1p2	Eclair	 </li>
+<li>ESE81	android-2.1_r2.1s	Eclair	</li>
+<li>EPE54B	android-2.1_r2.1p	Eclair	Nexus One</li>
+<li>ERE27	android-2.1_r2	Eclair	Nexus One</li>
+<li>ERD79	android-2.1_r1	Eclair	Nexus One</li>
+<li>ESD56	android-2.0.1_r1	Eclair	</li>
+<li>ESD20	android-2.0_r1	Eclair	 </li>
+<li>DMD64	android-1.6_r1.5	Donut	 </li>
+<li>DRD20	android-1.6_r1.4		</li>
+<li>DRD08	android-1.6_r1.3		</li>
+<li>DRC92	android-1.6_r1.2	</li>
+</ul>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
