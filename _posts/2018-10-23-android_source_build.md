@@ -42,8 +42,9 @@ sudo apt-get install lib32z-dev ccache
 {%highlight bash%}
 mkdir ~/bin
 PATH=~/bin:$PATH
-##curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-##chmod a+x ~/bin/repo
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+chmod a+x ~/bin/repo
+或者用清华的镜像	
 curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo -o repo
 chmod +x repo
 {%endhighlight%}
@@ -53,7 +54,8 @@ chmod +x repo
 
 ###	3、初始化代码库
 `repo init -u https://aosp.tuna.tsinghua.edu.cn/platform/manifest -b android-7.1.1_r22`		
-后面的版本号可以参考[版本](/source/source_version.html)
+后面的版本号可以参考[版本](/source/source_version.html)	
+如果有访问google被墙的话，将repo里面google的地址替换为https://aosp.tuna.tsinghua.edu.cn
 ###	4、同步代码库
 repo sync  漫长的等待		
 
