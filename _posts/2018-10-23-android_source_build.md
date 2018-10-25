@@ -33,7 +33,7 @@ sudo apt-get install lib32z-dev ccache
 
 * sudo apt-get install curl
 * sudo apt-get install git
-* git config --global user.email "xxx@yyy.com
+* git config --global user.email "xxx@yyy.com"
 * git config --global user.name "xxx"
 	
 ## 初始化源码文件
@@ -56,7 +56,12 @@ chmod +x repo
 后面的版本号可以参考[版本](/source/source_version.html)	
 如果有访问google被墙的话，将repo里面google的地址替换为https://aosp.tuna.tsinghua.edu.cn
 ###	4、同步代码库
-repo sync  漫长的等待		
+repo sync  漫长的等待	
+
+1. 也可以离线下载源码包
+2. 解压
+3. repo sync -l 刷新代码
+4. 即可一样编译	
 
 ## 全量编译
 1. 初始化编译环境		
@@ -79,5 +84,3 @@ Android 自带的emulator 有时会有没有模拟键，adb连接不上等问题
 1. 我们编译的是aosp_arm64-eng ，所以Android Studio 创建AVD时要选择arm的，不要选x86. 
 2. 把自己编译好的（路径在out/target/product/generic/下）system.img， 
 userdate.img ，ramdisk.img拷贝到 Android Studio SDK所在目录下的system-images/android-25/google_apis/arm64-v84/下，替换掉原有的文件，运行之前创建的AVD即可，等几分钟就可以看到自己百编译的系统了		
-
----
