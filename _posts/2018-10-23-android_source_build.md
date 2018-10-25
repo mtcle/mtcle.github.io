@@ -84,3 +84,9 @@ Android 自带的emulator 有时会有没有模拟键，adb连接不上等问题
 1. 我们编译的是aosp_arm64-eng ，所以Android Studio 创建AVD时要选择arm的，不要选x86. 
 2. 把自己编译好的（路径在out/target/product/generic/下）system.img， 
 userdate.img ，ramdisk.img拷贝到 Android Studio SDK所在目录下的system-images/android-25/google_apis/arm64-v84/下，替换掉原有的文件，运行之前创建的AVD即可，等几分钟就可以看到自己百编译的系统了		
+3. 报错jack相关错误的话可以试试	
+{% highlight bash %}
+export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4096m"
+out/host/linux-x86/bin/jack-admin kill-server
+out/host/linux-x86/bin/jack-admin start-server
+{% endhighlight %}
