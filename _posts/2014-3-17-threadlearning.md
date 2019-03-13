@@ -5,13 +5,12 @@ description: "运用Handler和Thread来实现多线程异步加载"
 category: "学习笔记"
 tags: [android,learning]
 ---
-###  异步加载,多线程  
----  
-因为手机的性能和网络资源的特征,多线程和异步加载在android开发中相当重要,运用无处不在.  
-这里就稍微总结一下自己运用Thread开辟新线程的例子.为自己mark~  
-***  
+## 异步加载,多线程
+> 因为手机的性能和网络资源的特征,多线程和异步加载在android开发中相当重要,运用无处不在.  
 
-先把代码贴上来:
+### 这里就稍微总结一下自己运用Thread开辟新线程的例子.为自己mark~
+
+### 先把代码贴上来
 {% highlight java%}    
  
  
@@ -108,7 +107,7 @@ public class FirstAsyncTask extends AsyncTask<Void, Void, Void> {
     
 {% endhighlight %}   
 
-总结一下一个异步操作的运行过程:   
+### 总结一下一个异步操作的运行过程:   
 
 +   生成该类的对象,并调用`execute`方法
 +   首先执行`onPreExecute`,处理后台任务启动前的UI工作 
